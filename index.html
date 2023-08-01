@@ -4,7 +4,7 @@
 
   <title>Saylani Welfare</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     body {
       text-align: center;
@@ -72,19 +72,24 @@ line-height: 1.5;
     .options-container input[type="radio"] {
       margin: 5px;
     }
-    .sign-up-button {
-    
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 4px;
-      cursor: pointer;
-      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* Add a subtle shade */
+    .container {
+      margin: 10px;
     }
 
-    .sign-up-button:hover {
-      background-color: darkgreen;
+    .container button {
+      background-color: green; /* Green background color */
+      color: white; /* Text color */
+      padding: 10px 20px; /* Padding around the text */
+      border: none; /* Remove button border */
+      border-radius: 4px; /* Rounded corners */
+      cursor: pointer; /* Cursor on hover */
+      font-size: 16px; /* Font size of the button text */
     }
+
+    .container button:hover {
+      background-color: darkgreen; /* Darker green on hover */
+    }
+    
   </style>
 </head>
 <body>
@@ -121,24 +126,83 @@ line-height: 1.5;
             <input type="radio" name="action" id="purchase" value="purchase">
             <label for="purchase"><b>Purchase</b></label>
           </div>
-          <button type="submit" class="sign-up-button">Sign Up</button>
+          
       </form>
-      
-        <script>
-          function togglePasswordVisibility() {
-            var passwordInput = document.getElementById("password");
-            var eyeIcon = document.getElementById("togglePassword");
-            if (passwordInput.type === "password") {
-              passwordInput.type = "text";
-              eyeIcon.classList.remove("fa-eye");
-              eyeIcon.classList.add("fa-eye-slash");
-            } else {
-              passwordInput.type = "password";
-              eyeIcon.classList.remove("fa-eye-slash");
-              eyeIcon.classList.add("fa-eye");
-            }
-          }
-        </script>
-      
+    <div class="container">
+        <button onclick="signup()">Signup</button>
+        <!-- <button onclick="logIn()">Login</button> -->
+    </div>
+
+  
+
+    <!-- Add Firebase JavaScript SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-auth.js"></script>
+
+    <script type="text/javascript">
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+    apiKey: "AIzaSyApMbd9Sncf9LWCqPLWS6Vj1Bm7beaOKF4",
+    authDomain: "smit-project-751b0.firebaseapp.com",
+    projectId: "smit-project-751b0",
+    storageBucket: "smit-project-751b0.appspot.com",
+    messagingSenderId: "824922240767",
+    appId: "1:824922240767:web:e6f9a800f7f2a10c3a3eca",
+    measurementId: "G-2T2Q9N891D"
+  };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        // Initialize Realtime Database and get a reference to the service
+        const database = firebase.database();
+
+        function signup() {
+            let email = document.getElementById("email").value;
+            let password = document.getElementById("password").value;
+            firebase.auth().createUserWithEmailAndPassword(email, password)
+                .then((userCredential) => {
+                    // Signed in 
+                    var user = userCredential.user;
+                    writeUserData(user.uid, email, password);
+                    console.log("user created successfully.... \n", user)
+                    
+                    // ...
+                })
+                .catch((error) => {
+                    var errorCode = error.code;
+                    var errorMessage = error.message;
+                    console.error("Login error:", errorCode, errorMessage);
+                });
+        }
+
+        // function logIn() {
+        //     let email = document.getElementById("name").value;
+        //     let password = document.getElementById("password").value;
+
+        //     firebase.auth().signInWithEmailAndPassword(email, password)
+        //         .then((userCredential) => {
+        //                 var user = userCredential.user;
+        //                 console.log('User signed in successfully... \n', user);
+
+        //         })
+        //         .catch((error) => {
+        //             var errorCode = error.code;
+        //             var errorMessage = error.message;
+        //             console.log("Login error:", errorCode, errorMessage);
+        //         });
+        // }
+
+        function writeUserData(userId, email, password) {
+            firebase.database().ref('users/' + userId).set({
+                userId: userId,
+                email: email,
+                password: password
+            });
+        }
+    </script>
 </body>
+
 </html>
+     
+      
+        
