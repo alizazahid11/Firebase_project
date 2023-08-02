@@ -1,0 +1,117 @@
+nav {
+    background-color:green; 
+    height: 50px; 
+    position: fixed; 
+    top: 0; 
+    width: 100%;
+    margin-left: -8px; 
+    display: flex;
+      align-items: center;
+      justify-content: space-between;
+   
+  }
+
+  .navbar {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+  }
+
+  .navbar li {
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+  }
+
+  .navbar a {
+    color: white; 
+    text-decoration: none;
+    
+  }
+  .navbar a:hover {
+    color: rgb(11, 58, 15); /* Change the text color on hover */
+     transition: color 0.3s;
+  }
+   
+  .navbar i {
+    font-size: 20px;
+    margin-bottom: 5px; 
+  }
+  .icons {
+    color: white;
+    
+  }
+  .icons i:hover {
+    color: rgb(11, 58, 15); /* Change the text color on hover */
+     transition: color 0.3s;
+  }
+  h1 {
+    color: rgb(29, 170, 29);
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+line-height: 4.5;
+text-align: center;
+  }
+
+  h4 {
+    color: rgb(9, 9, 196);
+   line-height: -1; /* Adjust line spacing for h2 */
+   margin-top:-80px;
+   margin-left:3px;
+   text-align: center;
+  }
+
+  h3{
+    color: rgb(12, 79, 179);
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 35px;  
+    text-align: center;
+}
+h5{
+    color:rgb(173, 169, 169);
+    text-align: center;
+    font-size: 18px;
+    margin-top:-10px;
+}
+.container button {
+    background-color: green;
+    color: white;
+    padding: 10px 80px; 
+    border: none;
+    border-radius: 9px; 
+    cursor: pointer; 
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    box-shadow: 0 0 0 4px rgb(190, 188, 188); 
+    
+  }
+
+  .container button:hover {
+    background-color: darkgreen;
+  }
+  .button {
+    background-color: white;
+    color: green;
+    border-color: rgb(196, 194, 194);
+    padding: 10px 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    height:80px;
+    width:200px;
+    margin-bottom: 40px;
+  }
+
+  .button:hover {
+    background-color: green;
+    color: white;
+  }
+
+  
