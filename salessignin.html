@@ -2,7 +2,7 @@
 <html>
 <head>
 
-  <title>Saylani Welfare signup</title>
+  <title>Saylani Welfare sign in</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
@@ -44,7 +44,7 @@ line-height: 1.5;
 
     .icon-container {
       position: absolute;
-      right: 500px;
+      right: 420px;
       bottom: 5px;
     
     }
@@ -86,7 +86,7 @@ line-height: 1.5;
       cursor: pointer; /* Cursor on hover */
       font-size: 20px; /* Font size of the button text */
       font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-      box-shadow: 0 0 0 4px rgb(172, 170, 170); /* Adds a 4px grey line around the button */
+      box-shadow: 0 0 0 4px rgb(219, 216, 216); /* Adds a 4px grey line around the button */
     }
 
     .container button:hover {
@@ -105,24 +105,29 @@ line-height: 1.5;
             <i class="fas fa-user"></i>
           </div>
         </div>
-        <div class="form-group">
-            <input type="text" id="contact" name="contact" placeholder="Contact" required >
-            <div class="icon-container">
-              <i class="fas fa-phone"></i>
-            </div>
-          </div>
+       
+       
           <div class="form-group">
             <input type="email" id="email" name="email" placeholder="Email" required>
             <div class="icon-container">
               <i class="fas fa-envelope"></i>
             </div>
           </div>
+         
           <div class="form-group">
-            <input type="password" id="password" name="password" placeholder="Password" required>
+            <input type="password" id="password" name="password" placeholder="Password" required style="margin-bottom: 20px;">
             <div class="icon-container">
-              <i class="fas fa-eye" id="togglePassword" onclick="togglePasswordVisibility()"></i>
+              <i class="fas fa-eye" id="togglePassword" onclick="togglePasswordVisibility()" style="margin-bottom: 40px;"></i>
+              
             </div>
+            <div class="forgot-password">
+                <a href="#" style="margin-right: 250px; margin-bottom: 40px; text-decoration: none; color: rgb(9, 9, 196);">Forgot Password?</a>
+              </div>
           </div>
+          
+         
+        
+         
           <div class="options-container">
             <input type="radio" name="action" id="sales" value="sales" required>
             <label for="sales"><b>Sales</b></label>
@@ -132,11 +137,11 @@ line-height: 1.5;
           
       </form>
     <div class="container">
-        <button onclick="signup()">Sign Up</button>
+        <button onclick="signin()">Sign In</button>
         <!-- <button onclick="logIn()">Login</button> -->
     </div>
 
-  
+ 
 
     <!-- Add Firebase JavaScript SDK -->
     <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase.js"></script>
@@ -159,7 +164,7 @@ line-height: 1.5;
         // Initialize Realtime Database and get a reference to the service
         const database = firebase.database();
 
-        function signup() {
+        function signin() {
             let email = document.getElementById("email").value;
             let password = document.getElementById("password").value;
             firebase.auth().createUserWithEmailAndPassword(email, password)
