@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Navigation Bar</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  
+  <style>
+    nav {
+    background-color:green; 
+    height: 50px; 
+    position: fixed; 
+    top: 0; 
+    width: 100%;
+    margin-left: -8px; 
+    display: flex;
+      align-items: center;
+      justify-content: space-between;
+   
+  }
+
+  .navbar {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+  }
+
+  .navbar li {
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+  }
+
+  .navbar a {
+    color: white; 
+    text-decoration: none;
+    
+  }
+  .navbar a:hover {
+    color: rgb(11, 58, 15); /* Change the text color on hover */
+     transition: color 0.3s;
+  }
+   
+  .navbar i {
+    font-size: 20px;
+    margin-bottom: 5px; 
+  }
+  .icons {
+    color: white;
+    
+  }
+  .icons i:hover {
+    color: rgb(11, 58, 15); /* Change the text color on hover */
+     transition: color 0.3s;
+  }
+  </style>
+  </head>
+  <body>
+    <nav>
+        <ul class="navbar">
+          <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+          <li><a href="#"><i class="fas fa-plus"></i> Add Items</a></li>
+          <li><a href="#"><i class="fas fa-user"></i> Account</a></li>
+        </ul>
+        <div class="icons">
+            <i class="fas fa-cog"></i> 
+            <i class="fas fa-plus-circle"></i>
+          </div>
+      </nav>
+  </body>

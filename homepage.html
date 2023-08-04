@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Navigation Bar</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  
+  <style>
+    nav {
+    background-color:green; 
+    height: 50px; 
+    position: fixed; 
+    top: 0; 
+    width: 100%;
+    margin-left: -8px; 
+    display: flex;
+      align-items: center;
+      justify-content: space-between;
+   
+  }
+
+  .navbar {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+  }
+
+  .navbar li {
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+  }
+
+  .navbar a {
+    color: white; 
+    text-decoration: none;
+    
+  }
+  .navbar a:hover {
+    color: rgb(11, 58, 15); /* Change the text color on hover */
+     transition: color 0.3s;
+  }
+   
+  .navbar i {
+    font-size: 20px;
+    margin-bottom: 5px; 
+  }
+  .icons {
+    color: white;
+    
+  }
+  .icons i:hover {
+    color: rgb(11, 58, 15); /* Change the text color on hover */
+     transition: color 0.3s;
+  }
+  h4 {
+  margin-top:-25px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: rgb(9, 9, 196);
+
+  }
+
+  h2 {
+   
+margin-top:50px;
+font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+color:green;
+  
+  }
+
+  .icons {
+  color: white;
+  display: flex;
+  align-items: center; 
+}
+
+.icons i {
+  font-size: 20px;
+  margin: 0 5px; 
+}
+.cart-icon {
+  color: rgb(3, 3, 3);
+  font-size: 20px;
+  position: absolute;
+  top: 60px;
+  right: 20px;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: rgb(212, 207, 207);
+  border-radius: 20px;
+  padding: 5px 10px;
+  margin-right: 20px;
+  width:700px;
+  margin-bottom: 30px;
+  margin-left:350px;
+  margin-top:-85px;
+}
+
+.search-bar input {
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 5px;
+  font-size: 14px;
+  width: 160px;
+}
+
+.search-bar i {
+  color: rgb(156, 156, 156);
+  margin-left: 500px;
+  cursor: pointer;
+}
+.button-container {
+      display: flex;
+      justify-content: space-evenly;
+      padding: 20px;
+   
+    }
+
+    /* Style for the buttons */
+    .button {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 10px;
+      border: 1px solid green;
+      border-radius: 20px;
+      width:140px;
+      cursor: pointer;
+    }
+
+    .button img {
+      width: 140px; /* Adjust the image size as needed */
+      height: 100px; /* Adjust the image size as needed */
+      object-fit: cover;
+    
+    }
+
+    .button span {
+      margin-top: 10px;
+      color: green;
+    }
+    h3{
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-size: 30px;
+        margin-left: 50px;
+    }
+
+    .button:hover {
+      background-color: #f1f1f1;
+    }
+    .product-container {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .product {
+      width: calc(35% - 10px);
+      padding: 10px;
+    
+      border: 1px solid #f3eeee;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      margin-left:120px;
+      margin-top:50px;
+      justify-content: space-evenly;
+      cursor: pointer;
+    }
+
+    .product img {
+      width: 100px;
+      height: 100px;
+      /* border-radius: 50%; */
+      margin-right: 10px;
+    }
+
+    .product-details {
+      flex-grow: 1;
+    }
+
+    .product-name {
+      font-weight: bold;
+    }
+
+    .add-icon {
+      width: 30px;
+      height: 30px;
+      background-color: green;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      color: white;
+    }
+    .product:hover {
+      background-color: #f1f1f1;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <ul class="navbar">
+      <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="#"><i class="fas fa-plus"></i> Add Items</a></li>
+      <li><a href="#"><i class="fas fa-user"></i> Account</a></li>
+    </ul>
+    <div class="icons">
+        <i class="fas fa-cog"></i> 
+        <i class="fas fa-plus-circle"></i>
+      </div>
+  </nav>
+  
+ <h2>SAYLANI WELFARE</h2>
+ <H4>DISCOUNT STORE</H4> 
+ <div class="icons">
+    <i class="fas fa-cog"></i> 
+    <i class="fas fa-plus-circle"></i>
+  </div>
+  <div class="cart-icon">
+    <i class="fas fa-shopping-cart"></i>
+  </div>
+  <div class="search-bar">
+    <input type="text" placeholder="Search by product name">
+    <i class="fas fa-search"></i>
+  </div>
+<div class="pics">
+    <img src="https://s3.envato.com/files/388266669/ShopBaskMettFoodReceiptYel1.jpg" style="width:900px; margin-left: 250px; border-radius: 10px; height:400px;">
+  </div>
+  <h3>Shop By Category</h3>
+  <div class="button-container">
+    <div class="button">
+        <a href="#sec-5">  <img src="https://thumbs.dreamstime.com/b/lots-groceries-17001094.jpg" alt="Image 1"></a>
+      <span >Grocery</span>
+    </div>
+    
+    <div class="button">
+     <a href="#sec-4"> <img src="https://img.freepik.com/premium-photo/shopping-bag-full-fresh-fruits-vegetables-with-assorted-ingredients_8087-2232.jpg" alt="Image 2"></a>
+      <span>Vegetables</span>
+    </div>
+    <div class="button">
+        <a href="#sec-3">  <img src="https://st.depositphotos.com/1593759/2652/i/450/depositphotos_26521407-stock-photo-set-of-different-fruits-and.jpg" alt="Image 3"></a>
+      <span>Fruits</span>
+    </div>
+    <div class="button">
+     <a href="#sec-2"> <img src="https://www.seriouseats.com/thmb/oyNH4JW4M_wjjkzJKa689803fuI=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__serious_eats__seriouseats.com__images__2014__07__20140728-indian-spices-masala-dabba-burger-shutterstock-1-5ee33b1aac29404e831594b53b7986d6.jpg" alt="Image 4"></a>
+      <span>Masalas</span>
+    </div>
+    <div class="button">
+    <a href="#sec-1"> <img src="https://img.freepik.com/premium-photo/raw-mix-meat_95419-1772.jpg" alt="Image 5"></a> 
+      <span>Meat</span>
+    </div>
+  </div>
+
+  <div class="product-container" id="sec-1">
+    <div class="product">
+      <img src="https://img.freepik.com/premium-photo/fresh-raw-beef-steak-isolated-white-background-with-clipping-path_228338-124.jpg" alt="Product 1">
+      <div class="product-details">
+        <span class="product-name"><b>Meat</b><span style="margin-left: 150px;"> Rs 800-per kg</span></span>
+        <span style="font-size: 12px; color:rgb(173, 169, 169)"><br>This is abc product description<br>This is a good product</span>
+        <!-- Add other product details here if needed -->
+        <div class="add-icon" style="margin-left: 220px; margin-top: -30px;">+</div>
+      </div>
+      
+    </div>
+    <div class="product">
+      <img src="https://t3.ftcdn.net/jpg/02/91/35/16/360_F_291351618_2ggRlHpK6pSwjUNtgMqhdaYliUYA5Jox.jpg" alt="Product 2">
+      <div class="product-details">
+        <span class="product-name"><b>Fish</b><span style="margin-left: 150px;"> Rs 450-per kg</span></span>
+        <span style="font-size: 12px; color:rgb(173, 169, 169)"><br>This is abc product description<br>This is a good product</span>
+        <div class="add-icon" style="margin-left: 220px; margin-top: -30px;">+</div>  
+    </div>
+   
+    </div>
+    <div class="product">
+      <img src="https://img.freepik.com/premium-photo/raw-beef-minced-meat-surface_188078-7474.jpg?w=2000" alt="Product 3">
+      <div class="product-details">
+        <span class="product-name"><b>Beef Qeema</b><span style="margin-left: 100px;"> Rs 800-per kg</span></span>
+        <span style="font-size: 12px; color:rgb(173, 169, 169)"><br>This is abc product description<br>This is a good product</span>
+        <div class="add-icon" style="margin-left: 220px; margin-top: -30px;">+</div>
+      </div>
+    
+    </div>
+    <div class="product">
+      <img src="https://media.istockphoto.com/id/1085313230/photo/uncooked-chicken-legs-on-white-background.jpg?s=612x612&w=0&k=20&c=_MkbNakXWjog9u-Ev_IJPWpJ3SGfy_ZVnXR2sDcRTow=" alt="Product 4">
+      <div class="product-details">
+        <span class="product-name"><b>Chicken</b><span style="margin-left: 120px;"> Rs 800-per kg</span></span>
+        <span style="font-size: 12px; color:rgb(173, 169, 169)"><br>This is abc product description<br>This is a good product</span>
+        <div class="add-icon" style="margin-left: 220px; margin-top: -30px;">+</div>
+      </div>
+      
+    </div>
+    <div class="product">
+        <img src="https://whistlerdelivery.ca/wp-content/uploads/2020/12/EAST-COAST-SHRIMP-MEAT.jpg" alt="Product 4">
+        <div class="product-details">
+          <span class="product-name"><b>Prawns</b><span style="margin-left: 130px;"> Rs 400-per kg</span></span>
+          <span style="font-size: 12px; color:rgb(173, 169, 169)"><br>This is abc product description<br>This is a good product</span>
+          <div class="add-icon" style="margin-left: 220px; margin-top: -30px;">+</div>
+        </div>
+        
+      </div>
+      <div class="product">
+        <img src="https://t4.ftcdn.net/jpg/02/75/48/41/360_F_275484134_TvyfqctvpG2mB9yjWPEYkiVDf3TyDsYX.jpg" alt="Product 4">
+        <div class="product-details">
+          <span class="product-name"><b>Goat meat</b><span style="margin-left: 100px;"> Rs 1400-per kg</span></span>
+          <span style="font-size: 12px; color:rgb(173, 169, 169)"><br>This is abc product description<br>This is a good product</span>
+          <div class="add-icon" style="margin-left: 220px; margin-top: -30px;">+</div>
+        </div>
+        
+      </div>
+      <div class="product" id="sec-2">
+        <img src="https://t3.ftcdn.net/jpg/03/17/92/38/360_F_317923891_RpjzsaGSLakesLcvTWPSMEt3nwonBedS.jpg" alt="Product 4">
+        <div class="product-details">
+          <span class="product-name"><b>Chilli masala</b><span style="margin-left: 90px;"> Rs 100-per gm</span></span>
+          <span style="font-size: 12px; color:rgb(173, 169, 169)"><br>This is abc product description<br>This is a good product</span>
+          <div class="add-icon" style="margin-left: 220px; margin-top: -30px;">+</div>
+        </div>
+        
+      </div>
+      <div class="product" >
+        <img src="https://img.freepik.com/premium-photo/finely-dry-turmeric-powder-wooden-bow-with-rhizome-sliced-isolated-white-background_252965-34.jpg" alt="Product 4">
+        <div class="product-details">
+          <span class="product-name"><b>Haldi Powder</b><span style="margin-left: 80px;"> Rs 150-per gm</span></span>
+          <span style="font-size: 12px; color:rgb(173, 169, 169)"><br>This is abc product description<br>This is a good product</span>
+          <div class="add-icon" style="margin-left: 220px; margin-top: -30px;">+</div>
+        </div>
+        
+      </div>
+      <div class="product">
+        <img src="https://spiceitupp.com/wp-content/uploads/2019/02/Indian-chaat-masala-image-spiceitupp.jpg" alt="Product 4">
+        <div class="product-details">
+          <span class="product-name"><b>Chat Masala</b><span style="margin-left: 90px;"> Rs 150-per gm</span></span>
+          <span style="font-size: 12px; color:rgb(173, 169, 169)"><br>This is abc product description<br>This is a good product</span>
+          <div class="add-icon" style="margin-left: 220px; margin-top: -30px;">+</div>
+        </div>
+        
+      </div>
+      <div class="product">
+        <img src="https://img.freepik.com/premium-photo/coriander-powder-dhaniya-powder-white-background_55610-821.jpg?w=2000" alt="Product 4">
+        <div class="product-details">
+          <span class="product-name"><b>Dhaniya Powder</b><span style="margin-left: 60px;"> Rs 150-per gm</span></span>
+          <span style="font-size: 12px; color:rgb(173, 169, 169)"><br>This is abc product description<br>This is a good product</span>
+          <div class="add-icon" style="margin-left: 220px; margin-top: -30px;">+</div>
+        </div>
+        
+      </div>
+      <div class="product">
+        <img src="https://st3.depositphotos.com/29339490/36218/i/450/depositphotos_362184038-stock-photo-salt-isolated-white-background.jpg" alt="Product 4">
+        <div class="product-details">
+          <span class="product-name"><b>Salt</b><span style="margin-left: 150px;"> Rs 50-per kg</span></span>
+          <span style="font-size: 12px; color:rgb(173, 169, 169)"><br>This is abc product description<br>This is a good product</span>
+          <div class="add-icon" style="margin-left: 220px; margin-top: -30px;">+</div>
+        </div>
+        
+      </div>
+      <div class="product">
+        <img src="https://www.seriouseats.com/thmb/kcVRsgt94S0g9N9I2zljZiOt1fQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__serious_eats__seriouseats.com__recipes__images__2016__04__20150402-garam-masala-2879a150647d4403bdc0645e71a2ae0a.jpg" alt="Product 4">
+        <div class="product-details">
+          <span class="product-name"><b>Garam Masala</b><span style="margin-left: 70px;"> Rs 200-per gm</span></span>
+          <span style="font-size: 12px; color:rgb(173, 169, 169)"><br>This is abc product description<br>This is a good product</span>
+          <div class="add-icon" style="margin-left: 220px; margin-top: -30px;">+</div>
+        </div>
+        
+      </div>
+      <div class="product">
+        <img src="https://media.istockphoto.com/id/1369570819/photo/fresh-thyme-leaves-and-dried-thyme-leaf-powder.jpg?s=612x612&w=0&k=20&c=yJ48N9EkAv-lni9HLNCEU0VWwNlDAbqOPcKGt5N-spA=" alt="Product 4">
+        <div class="product-details">
+          <span class="product-name"><b>Oregano Powder</b><span style="margin-left: 60px;"> Rs 150-per gm</span></span>
+          <span style="font-size: 12px; color:rgb(173, 169, 169)"><br>This is abc product description<br>This is a good product</span>
+          <div class="add-icon" style="margin-left: 220px; margin-top: -30px;">+</div>
+        </div>
+        
+      </div>
+      <div class="product">
+        <img src="https://static.tossdown.com/images/34b9bf36-73c7-4b74-af39-629828d9de9e.jpg" alt="Product 4">
+        <div class="product-details">
+          <span class="product-name"><b>Garlic Powder</b><span style="margin-left: 70px;"> Rs 50-per gm</span></span>
+          <span style="font-size: 12px; color:rgb(173, 169, 169)"><br>This is abc product description<br>This is a good product</span>
+          <div class="add-icon" style="margin-left: 220px; margin-top: -30px;">+</div>
+        </div>
+        
+      </div>
+      <div class="product" id="sec-3">
+        <img src="https://img.freepik.com/free-vector/realistic-berries-composition-with-isolated-image-strawberry-with-ripe-leaves-blank-background-vector-illustration_1284-66036.jpg?w=2000" alt="Product 4">
+        <div class="product-details">
+          <span class="product-name"><b>Strawberries</b><span style="margin-left: 90px;"> Rs 500-per kg</span></span>
+          <span style="font-size: 12px; color:rgb(173, 169, 169)"><br>This is abc product description<br>This is a good product</span>
+          <div class="add-icon" style="margin-left: 220px; margin-top: -30px;">+</div>
+        </div>
+        
+      </div>
+      <div class="product">
+        <img src="https://nutriworks.in/wp-content/uploads/2018/04/mango.jpg" alt="Product 4">
+        <div class="product-details">
+          <span class="product-name"><b>Mangoes</b><span style="margin-left: 100px;"> Rs 200-per kg</span></span>
+          <span style="font-size: 12px; color:rgb(173, 169, 169)"><br>This is abc product description<br>This is a good product</span>
+          <div class="add-icon" style="margin-left: 220px; margin-top: -30px;">+</div>
+        </div>
+        
+      </div>
+      <div class="product">
+        <img src="https://media.istockphoto.com/id/464387287/photo/bunch-of-cherries.jpg?s=612x612&w=0&k=20&c=nL3BAsDDKN24jriZexcCsRAA3Q62mBsy4ORSPOG5_sk=" alt="Product 4">
+        <div class="product-details">
+          <span class="product-name"><b>Cherries</b><span style="margin-left: 120px;"> Rs 300-per kg</span></span>
+          <span style="font-size: 12px; color:rgb(173, 169, 169)"><br>This is abc product description<br>This is a good product</span>
+          <div class="add-icon" style="margin-left: 220px; margin-top: -30px;">+</div>
+        </div>
+        
+      </div>
+      <div class="product">
+        <img src="https://d3mvlb3hz2g78.cloudfront.net/wp-content/uploads/2012/10/thumb_720_450_Kiwi_shutterstock_84220885-1.jpg" alt="Product 4">
+        <div class="product-details">
+          <span class="product-name"><b>Kiwis</b><span style="margin-left: 120px;"> Rs 500-per kg</span></span>
+          <span style="font-size: 12px; color:rgb(173, 169, 169)"><br>This is abc product description<br>This is a good product</span>
+          <div class="add-icon" style="margin-left: 220px; margin-top: -30px;">+</div>
+        </div>
+        
+      </div>
+      <div class="product">
+        <img src="https://media.istockphoto.com/id/173242750/photo/banana-bunch.jpg?s=612x612&w=0&k=20&c=MAc8AXVz5KxwWeEmh75WwH6j_HouRczBFAhulLAtRUU=" alt="Product 4">
+        <div class="product-details">
+          <span class="product-name"><b>Bananas</b><span style="margin-left: 120px;"> Rs 100-per dozen</span></span>
+          <span style="font-size: 12px; color:rgb(173, 169, 169)"><br>This is abc product description<br>This is a good product</span>
+          <div class="add-icon" style="margin-left: 220px; margin-top: -30px;">+</div>
+        </div>
+        
+      </div>
+      <div class="product">
+        <img src="https://st4.depositphotos.com/1642482/26479/i/600/depositphotos_264793476-stock-photo-red-apple-isolated-on-white.jpg" alt="Product 4">
+        <div class="product-details">
+          <span class="product-name"><b>Apples</b><span style="margin-left: 110px;"> Rs 100-per kg</span></span>
+          <span style="font-size: 12px; color:rgb(173, 169, 169)"><br>This is abc product description<br>This is a good product</span>
+          <div class="add-icon" style="margin-left: 220px; margin-top: -30px;">+</div>
+        </div>
+        
+      </div>
+      <div class="product" id="sec-4">
+        <img src="https://images.all-free-download.com/images/graphiclarge/onion_highdefinition_picture_168357.jpg" alt="Product 4">
+        <div class="product-details">
+          <span class="product-name"><b>Onions</b><span style="margin-left: 130px;"> Rs 100-per kg</span></span>
+          <span style="font-size: 12px; color:rgb(173, 169, 169)"><br>This is abc product description<br>This is a good product</span>
+          <div class="add-icon" style="margin-left: 220px; margin-top: -30px;">+</div>
+        </div>
+        
+      </div>
+      <div class="product">
+        <img src="https://media.istockphoto.com/id/91476821/photo/three-tomatoes.jpg?s=612x612&w=0&k=20&c=s_Vnlu9yQZmpQfnODC_BBS-Pda_FMolVTy9yiRaOfCY=" alt="Product 4">
+        <div class="product-details">
+          <span class="product-name"><b>Tomatoes</b><span style="margin-left: 90px;"> Rs 300-per kg</span></span>
+          <span style="font-size: 12px; color:rgb(173, 169, 169)"><br>This is abc product description<br>This is a good product</span>
+          <div class="add-icon" style="margin-left: 220px; margin-top: -30px;">+</div>
+        </div>
+        
+      </div>
+      <div class="product">
+        <img src="https://4.imimg.com/data4/PU/ET/MY-27614817/coriander-leaf-500x500-500x500.jpg" alt="Product 4">
+        <div class="product-details">
+          <span class="product-name"><b>Corriander</b><span style="margin-left: 100px;"> Rs 30-per kg</span></span>
+          <span style="font-size: 12px; color:rgb(173, 169, 169)"><br>This is abc product description<br>This is a good product</span>
+          <div class="add-icon" style="margin-left: 220px; margin-top: -30px;">+</div>
+        </div>
+        
+      </div>
+      <div class="product">
+        <img src="https://dsmonline.pk/wp-content/uploads/2022/05/podina.jpg" alt="Product 4">
+        <div class="product-details">
+          <span class="product-name"><b>Podina</b><span style="margin-left: 110px;"> Rs 50-per kg</span></span>
+          <span style="font-size: 12px; color:rgb(173, 169, 169)"><br>This is abc product description<br>This is a good product</span>
+          <div class="add-icon" style="margin-left: 220px; margin-top: -30px;">+</div>
+        </div>
+        
+      </div>
+      <div class="product">
+        <img src="https://baazwsh.com/cdn/shop/products/green-chilli-hari-mirch-250g-baazwsh-388555.jpg?v=1633238627" alt="Product 4">
+        <div class="product-details">
+          <span class="product-name"><b>Green chiilis</b><span style="margin-left: 90px;"> Rs 100-per kg</span></span>
+          <span style="font-size: 12px; color:rgb(173, 169, 169)"><br>This is abc product description<br>This is a good product</span>
+          <div class="add-icon" style="margin-left: 220px; margin-top: -30px;">+</div>
+        </div>
+        
+      </div>
+      <div class="product">
+        <img src="https://freshbuy.pk/wp-content/uploads/2022/11/Garlic-China.jpg" alt="Product 4">
+        <div class="product-details">
+          <span class="product-name"><b>Garlic</b><span style="margin-left: 110px;"> Rs 250-per gm</span></span>
+          <span style="font-size: 12px; color:rgb(173, 169, 169)"><br>This is abc product description<br>This is a good product</span>
+          <div class="add-icon" style="margin-left: 220px; margin-top: -30px;">+</div>
+        </div>
+        
+      </div>
+      <div class="product">
+        <img src="https://media.istockphoto.com/id/511851020/photo/fresh-ginger-root-or-rhizome-isolated-on-white-background-cutout.jpg?s=612x612&w=0&k=20&c=3EGls2tS0ml61Y_KEw-BlH6MsZoZm9owHFl2VFHy-8c=" alt="Product 4">
+        <div class="product-details">
+          <span class="product-name"><b>Ginger</b><span style="margin-left: 120px;"> Rs 100-per gm</span></span>
+          <span style="font-size: 12px; color:rgb(173, 169, 169)"><br>This is abc product description<br>This is a good product</span>
+          <div class="add-icon" style="margin-left: 220px; margin-top: -30px;">+</div>
+        </div>
+        
+      </div>
+      <div class="product">
+        <img src="https://media.istockphoto.com/id/157430678/photo/three-potatoes.jpg?s=170667a&w=0&k=20&c=7Lqq__k5r5sNefgzXOJKVHASou4xADdT27O5dVtMuos=" alt="Product 4">
+        <div class="product-details">
+          <span class="product-name"><b>Potatoes</b><span style="margin-left: 90px;"> Rs 100-per kg</span></span>
+          <span style="font-size: 12px; color:rgb(173, 169, 169)"><br>This is abc product description<br>This is a good product</span>
+          <div class="add-icon" style="margin-left: 220px; margin-top: -30px;">+</div>
+        </div>
+        
+      </div>
+      <div class="product" id="sec-5">
+        <img src="https://www.humarabazar.com/wp-content/uploads/2022/06/61z8h3l3DvL._SL1000_-600x600.jpg" alt="Product 4">
+        <div class="product-details">
+          <span class="product-name"><b>Toilet Cleaner</b><span style="margin-left: 70px;"> Rs 100</span></span>
+          <span style="font-size: 12px; color:rgb(173, 169, 169)"><br>This is abc product description<br>This is a good product</span>
+          <div class="add-icon" style="margin-left: 220px; margin-top: -30px;">+</div>
+        </div>
+        
+      </div>
+      <div class="product">
+        <img src="https://media.istockphoto.com/id/1156384992/photo/olive-oil-on-white.jpg?s=612x612&w=0&k=20&c=uz2WWZV0GdbJAJXcwNQvQVtj-R9Y-O6BVPEkhAc1ZQA=" alt="Product 4">
+        <div class="product-details">
+          <span class="product-name"><b>Cooking Oil</b><span style="margin-left: 70px;"> Rs 100-per gm</span></span>
+          <span style="font-size: 12px; color:rgb(173, 169, 169)"><br>This is abc product description<br>This is a good product</span>
+          <div class="add-icon" style="margin-left: 220px; margin-top: -30px;">+</div>
+        </div>
+        
+      </div>
+      <div class="product">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/33/Fresh_made_bread_05.jpg" alt="Product 4">
+        <div class="product-details">
+          <span class="product-name"><b>Bread</b><span style="margin-left: 120px;"> Rs 70 </span></span>
+          <span style="font-size: 12px; color:rgb(173, 169, 169)"><br>This is abc product description<br>This is a good product</span>
+          <div class="add-icon" style="margin-left: 220px; margin-top: -30px;">+</div>
+        </div>
+        
+      </div>
+      <div class="product">
+        <img src="https://media.istockphoto.com/id/916185054/photo/group-of-three-white-eggs-isolated-on-white-background.jpg?s=612x612&w=0&k=20&c=y8Ju4ZXyJqHMNfm30qpPMh_ik8i1B_4Enih91pDuia8=" alt="Product 4">
+        <div class="product-details">
+          <span class="product-name"><b>Eggs</b><span style="margin-left: 130px;"> Rs 150-per dozen</span></span>
+          <span style="font-size: 12px; color:rgb(173, 169, 169)"><br>This is abc product description<br>This is a good product</span>
+          <div class="add-icon" style="margin-left: 220px; margin-top: -30px;">+</div>
+        </div>
+        
+      </div>
+      <div class="product">
+        <img src="https://media.istockphoto.com/id/177834117/photo/butter-isolated-on-white.jpg?s=612x612&w=0&k=20&c=wKXNDSvB-tzfT9RPdmKsH2JAGpBv7OISdUmGdegupxg=" alt="Product 4">
+        <div class="product-details">
+          <span class="product-name"><b>Butter</b><span style="margin-left: 120px;"> Rs 100-per gm</span></span>
+          <span style="font-size: 12px; color:rgb(173, 169, 169)"><br>This is abc product description<br>This is a good product</span>
+          <div class="add-icon" style="margin-left: 220px; margin-top: -30px;">+</div>
+        </div>
+        
+      </div>
+      <div class="product">
+        <img src="https://img1.exportersindia.com/product_images/bc-full/2020/2/6642451/chitra-detergent-powder-1582959922-5319534.jpeg" alt="Product 4">
+        <div class="product-details">
+          <span class="product-name"><b>Washing Powder</b><span style="margin-left: 60px;"> Rs 100</span></span>
+          <span style="font-size: 12px; color:rgb(173, 169, 169)"><br>This is abc product description<br>This is a good product</span>
+          <div class="add-icon" style="margin-left: 220px; margin-top: -30px;">+</div>
+        </div>
+        
+      </div>
+  </div>
