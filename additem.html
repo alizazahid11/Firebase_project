@@ -58,13 +58,201 @@
     color: rgb(11, 58, 15); /* Change the text color on hover */
      transition: color 0.3s;
   }
+  h4 {
+    color: rgb(9, 9, 196);
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+line-height: 4.5;
+text-align: center;
+margin-right: 1400px;
+font-size:20px;
+margin-top:-85px;
+margin-left:55px;
+
+  }
+
+  h5 {
+    color: rgb(29, 170, 29);
+   line-height: -1; /* Adjust line spacing for h2 */
+   margin-top:-80px;
+   margin-left:3px;
+   text-align: center;
+   margin-right: 1400px;
+   margin-top: -60px;
+   font-size:20px;
+   margin-left:55px;
+  }
+  div img{
+    margin-top:70px;
+   
+  }
+  h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    form {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    .form-group {
+      margin-bottom: 10px;
+      margin-top: -20px;
+     
+    }
+
+    .photo-container {
+      position: relative;
+      text-align: center;
+    }
+
+    .photo-container img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      border: 2px solid #ccc;
+    }
+
+    .camera-icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 24px;
+      color: #ccc;
+      cursor: pointer;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      font-size: 16px;
+      
+    }
+    .form-group input[type="text"] {
+      
+      background-color: #c0bcbc; /* Set the background color to grey */
+    }
+
+    select {
+      height: 40px;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 4px rgba(57, 56, 56, 0.2);
+    }
+
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+    .file-input input {
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      cursor: pointer;
+    }
+    
+    .file-container {
+      position: relative;
+      text-align: center;
+    }
+
+    .file-input {
+      width: 450px;
+      height: 250px;
+      border: 2px solid #ccc;
+      background-color: rgb(177, 174, 174);
+      border-radius: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    
+    }
+
+    .camera-icon {
+      font-size: 40px;
+      color: #ccc;
+      margin-left:15px;
+    }
+    .form-group select {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+      border-radius: 10px;
+      background-color:rgb(191, 187, 187); /* Set the background color to grey */
+   color:rgb(117, 117, 117);
+   height:35px;
+    }
+    .form-group #description{
+        width: 430px;
+      padding: 8px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+      border-radius: 10px;
+      background-color:rgb(191, 187, 187); /* Set the background color to grey */
+   color:rgb(117, 117, 117);
+   height:120px; 
+    }
+     label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+      color:rgb(9, 9, 170);
+    }
+    .input-container {
+      display: flex;
+      align-items: center;
+     justify-content: space-around;
+     margin-left:-40px;
+     font-size: 20px;
+     
+    }
+     .input-container input {
+     margin-top: -10px;
+     margin-left:-40px;
+     border-radius:30px;
+     width:200px;
+     height:10px;
+     background-color:rgb(216, 213, 213);
+     border-color:rgb(216, 213, 213) ;
+     
+    }
+    .input-container  #unit-price{
+        height: 40px;
+    }
+
   </style>
   </head>
   <body>
     <nav>
         <ul class="navbar">
           <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
-          <li><a href="#"><i class="fas fa-plus"></i> Add Items</a></li>
+          <li><a href="./additem.html"><i class="fas fa-plus"></i> Add Items</a></li>
           <li><a href="#"><i class="fas fa-user"></i> Account</a></li>
         </ul>
         <div class="icons">
@@ -72,4 +260,61 @@
             <i class="fas fa-plus-circle"></i>
           </div>
       </nav>
+      <div>
+        <img src="https://cdn-icons-png.flaticon.com/512/4128/4128176.png" height="50" width="50"></div>
+     <h4>Mr.Ahmed</h4>
+    <h5>Sales</h5>
+    <!DOCTYPE html>
+<html>
+<head>
+  
+</head>
+<body>
+  <h1 style="margin-left: -200px; margin-bottom: 30px; color:rgb(17, 17, 154);">Add New Item</h1>
+  <form>
+
+    <div class="form-group file-container">
+      
+        <div class="file-input">
+            <i class="camera-icon fas fa-camera"></i>
+          <input type="file" id="photo" accept="image/*" capture="camera" name="photo">
+        </div>
+      </div>
+      <br><br>
+      <div class="form-group" style="width:430px; border-radius: 90px; ">
+    <input type="text" id="item-name" name="item-name" required placeholder=" item name">
+</div>
+    <br><br>
+
+    <div class="form-group" style="width:450px; ">
+    <select id="category" name="category" required >
+      <option value="" >Select a category</option>
+      <option value="electronics">Electronics</option>
+      <option value="clothing">Clothing</option>
+      <option value="home-appliances">Home Appliances</option>
+      <!-- Add more categories as needed -->
+    </select>
+</div>
+    <br><br>
+    <div class="form-group">
+   
+    <textarea id="description" name="description" rows="4" required placeholder="Description"></textarea>
+</div>
+    <br><br>
+    
+    <div class="input-container" >
+        <label for="unit-price">Unit Name:</label>
+    <input type="text" id="unit-price" name="unit-price" required placeholder="Kg/dozen/gm" id="up" style="height:20px;  border: 1px solid #7b7676; "></div> 
+        
+    <br><br>
+    <div class="input-container" >
+        <label for="unit-price">Unit Price:</label>
+    <input type="number" id="unit-price" name="unit-price" required placeholder="Unit price" id="up" style="height:30px;"></div>
+    <br><br>
+   <center> <div class="form-group">
+    <input type="submit" value="Add Product"></div></center>
+  </form>
+</body>
+</html>
+ 
   </body>

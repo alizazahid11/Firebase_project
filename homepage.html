@@ -111,6 +111,7 @@ color:green;
   padding: 5px;
   font-size: 14px;
   width: 160px;
+  cursor: pointer;
 }
 
 .search-bar i {
@@ -210,7 +211,7 @@ color:green;
   <nav>
     <ul class="navbar">
       <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
-      <li><a href="#"><i class="fas fa-plus"></i> Add Items</a></li>
+      <li><a href="./ss.html"><i class="fas fa-shopping-cart white-icon"></i> Cart</a></li>
       <li><a href="#"><i class="fas fa-user"></i> Account</a></li>
     </ul>
     <div class="icons">
@@ -267,16 +268,23 @@ color:green;
         <span class="product-name"><b>Meat</b><span style="margin-left: 150px;"> Rs 800-per kg</span></span>
         <span style="font-size: 12px; color:rgb(173, 169, 169)"><br>This is abc product description<br>This is a good product</span>
         <!-- Add other product details here if needed -->
-        <div class="add-icon" style="margin-left: 220px; margin-top: -30px;">+</div>
+        <div class="add-icon" style="margin-left: 220px; margin-top: -30px;" onclick="addItem('Item Name', 10)">+</div>
+   
       </div>
-      
+      <script>
+        function addItem(itemName, price) {
+          const cartItems = JSON.parse(localStorage.getItem('cartItems') || '[]');
+          cartItems.push({ name: itemName, price: price });
+          localStorage.setItem('cartItems', JSON.stringify(cartItems));
+        }
+      </script>
     </div>
     <div class="product">
       <img src="https://t3.ftcdn.net/jpg/02/91/35/16/360_F_291351618_2ggRlHpK6pSwjUNtgMqhdaYliUYA5Jox.jpg" alt="Product 2">
       <div class="product-details">
         <span class="product-name"><b>Fish</b><span style="margin-left: 150px;"> Rs 450-per kg</span></span>
         <span style="font-size: 12px; color:rgb(173, 169, 169)"><br>This is abc product description<br>This is a good product</span>
-        <div class="add-icon" style="margin-left: 220px; margin-top: -30px;">+</div>  
+        <div class="add-icon" style="margin-left: 220px; margin-top: -30px;" onclick="addItem('Item Name', 10)">+</div>  
     </div>
    
     </div>
@@ -285,7 +293,7 @@ color:green;
       <div class="product-details">
         <span class="product-name"><b>Beef Qeema</b><span style="margin-left: 100px;"> Rs 800-per kg</span></span>
         <span style="font-size: 12px; color:rgb(173, 169, 169)"><br>This is abc product description<br>This is a good product</span>
-        <div class="add-icon" style="margin-left: 220px; margin-top: -30px;">+</div>
+        <div class="add-icon" style="margin-left: 220px; margin-top: -30px;"onclick="addItem('Item 1', 10)">+</div>
       </div>
     
     </div>
@@ -294,7 +302,7 @@ color:green;
       <div class="product-details">
         <span class="product-name"><b>Chicken</b><span style="margin-left: 120px;"> Rs 800-per kg</span></span>
         <span style="font-size: 12px; color:rgb(173, 169, 169)"><br>This is abc product description<br>This is a good product</span>
-        <div class="add-icon" style="margin-left: 220px; margin-top: -30px;">+</div>
+        <div class="add-icon" style="margin-left: 220px; margin-top: -30px;"onclick="addItem('Item 1', 10)">+</div>
       </div>
       
     </div>
@@ -303,7 +311,7 @@ color:green;
         <div class="product-details">
           <span class="product-name"><b>Prawns</b><span style="margin-left: 130px;"> Rs 400-per kg</span></span>
           <span style="font-size: 12px; color:rgb(173, 169, 169)"><br>This is abc product description<br>This is a good product</span>
-          <div class="add-icon" style="margin-left: 220px; margin-top: -30px;">+</div>
+          <div class="add-icon" style="margin-left: 220px; margin-top: -30px;"onclick="addItem('Item 1', 10)">+</div>
         </div>
         
       </div>
@@ -312,7 +320,7 @@ color:green;
         <div class="product-details">
           <span class="product-name"><b>Goat meat</b><span style="margin-left: 100px;"> Rs 1400-per kg</span></span>
           <span style="font-size: 12px; color:rgb(173, 169, 169)"><br>This is abc product description<br>This is a good product</span>
-          <div class="add-icon" style="margin-left: 220px; margin-top: -30px;">+</div>
+          <div class="add-icon" style="margin-left: 220px; margin-top: -30px;"onclick="addItem('Item 1', 10)">+</div>
         </div>
         
       </div>
@@ -321,7 +329,7 @@ color:green;
         <div class="product-details">
           <span class="product-name"><b>Chilli masala</b><span style="margin-left: 90px;"> Rs 100-per gm</span></span>
           <span style="font-size: 12px; color:rgb(173, 169, 169)"><br>This is abc product description<br>This is a good product</span>
-          <div class="add-icon" style="margin-left: 220px; margin-top: -30px;">+</div>
+          <div class="add-icon" style="margin-left: 220px; margin-top: -30px;"onclick="addItem('Item 1', 10)">+</div>
         </div>
         
       </div>
@@ -330,7 +338,7 @@ color:green;
         <div class="product-details">
           <span class="product-name"><b>Haldi Powder</b><span style="margin-left: 80px;"> Rs 150-per gm</span></span>
           <span style="font-size: 12px; color:rgb(173, 169, 169)"><br>This is abc product description<br>This is a good product</span>
-          <div class="add-icon" style="margin-left: 220px; margin-top: -30px;">+</div>
+          <div class="add-icon" style="margin-left: 220px; margin-top: -30px;"onclick="addItem('Item 1', 10)">+</div>
         </div>
         
       </div>
@@ -339,7 +347,7 @@ color:green;
         <div class="product-details">
           <span class="product-name"><b>Chat Masala</b><span style="margin-left: 90px;"> Rs 150-per gm</span></span>
           <span style="font-size: 12px; color:rgb(173, 169, 169)"><br>This is abc product description<br>This is a good product</span>
-          <div class="add-icon" style="margin-left: 220px; margin-top: -30px;">+</div>
+          <div class="add-icon" style="margin-left: 220px; margin-top: -30px;"onclick="addItem('Item 1', 10)">+</div>
         </div>
         
       </div>
@@ -348,7 +356,7 @@ color:green;
         <div class="product-details">
           <span class="product-name"><b>Dhaniya Powder</b><span style="margin-left: 60px;"> Rs 150-per gm</span></span>
           <span style="font-size: 12px; color:rgb(173, 169, 169)"><br>This is abc product description<br>This is a good product</span>
-          <div class="add-icon" style="margin-left: 220px; margin-top: -30px;">+</div>
+          <div class="add-icon" style="margin-left: 220px; margin-top: -30px;"onclick="addItem('Item 1', 10)">+</div>
         </div>
         
       </div>
@@ -357,7 +365,7 @@ color:green;
         <div class="product-details">
           <span class="product-name"><b>Salt</b><span style="margin-left: 150px;"> Rs 50-per kg</span></span>
           <span style="font-size: 12px; color:rgb(173, 169, 169)"><br>This is abc product description<br>This is a good product</span>
-          <div class="add-icon" style="margin-left: 220px; margin-top: -30px;">+</div>
+          <div class="add-icon" style="margin-left: 220px; margin-top: -30px;"onclick="addItem('Item 1', 10)">+</div>
         </div>
         
       </div>
@@ -366,7 +374,7 @@ color:green;
         <div class="product-details">
           <span class="product-name"><b>Garam Masala</b><span style="margin-left: 70px;"> Rs 200-per gm</span></span>
           <span style="font-size: 12px; color:rgb(173, 169, 169)"><br>This is abc product description<br>This is a good product</span>
-          <div class="add-icon" style="margin-left: 220px; margin-top: -30px;">+</div>
+          <div class="add-icon" style="margin-left: 220px; margin-top: -30px;"onclick="addItem('Item 1', 10)">+</div>
         </div>
         
       </div>
@@ -375,7 +383,7 @@ color:green;
         <div class="product-details">
           <span class="product-name"><b>Oregano Powder</b><span style="margin-left: 60px;"> Rs 150-per gm</span></span>
           <span style="font-size: 12px; color:rgb(173, 169, 169)"><br>This is abc product description<br>This is a good product</span>
-          <div class="add-icon" style="margin-left: 220px; margin-top: -30px;">+</div>
+          <div class="add-icon" style="margin-left: 220px; margin-top: -30px;"onclick="addItem('Item 1', 10)">+</div>
         </div>
         
       </div>
@@ -384,7 +392,7 @@ color:green;
         <div class="product-details">
           <span class="product-name"><b>Garlic Powder</b><span style="margin-left: 70px;"> Rs 50-per gm</span></span>
           <span style="font-size: 12px; color:rgb(173, 169, 169)"><br>This is abc product description<br>This is a good product</span>
-          <div class="add-icon" style="margin-left: 220px; margin-top: -30px;">+</div>
+          <div class="add-icon" style="margin-left: 220px; margin-top: -30px;"onclick="addItem('Item 1', 10)">+</div>
         </div>
         
       </div>
@@ -393,7 +401,7 @@ color:green;
         <div class="product-details">
           <span class="product-name"><b>Strawberries</b><span style="margin-left: 90px;"> Rs 500-per kg</span></span>
           <span style="font-size: 12px; color:rgb(173, 169, 169)"><br>This is abc product description<br>This is a good product</span>
-          <div class="add-icon" style="margin-left: 220px; margin-top: -30px;">+</div>
+          <div class="add-icon" style="margin-left: 220px; margin-top: -30px;"onclick="addItem('Item 1', 10)">+</div>
         </div>
         
       </div>
@@ -402,7 +410,7 @@ color:green;
         <div class="product-details">
           <span class="product-name"><b>Mangoes</b><span style="margin-left: 100px;"> Rs 200-per kg</span></span>
           <span style="font-size: 12px; color:rgb(173, 169, 169)"><br>This is abc product description<br>This is a good product</span>
-          <div class="add-icon" style="margin-left: 220px; margin-top: -30px;">+</div>
+          <div class="add-icon" style="margin-left: 220px; margin-top: -30px;"onclick="addItem('Item 1', 10)">+</div>
         </div>
         
       </div>
@@ -411,7 +419,7 @@ color:green;
         <div class="product-details">
           <span class="product-name"><b>Cherries</b><span style="margin-left: 120px;"> Rs 300-per kg</span></span>
           <span style="font-size: 12px; color:rgb(173, 169, 169)"><br>This is abc product description<br>This is a good product</span>
-          <div class="add-icon" style="margin-left: 220px; margin-top: -30px;">+</div>
+          <div class="add-icon" style="margin-left: 220px; margin-top: -30px;"onclick="addItem('Item 1', 10)">+</div>
         </div>
         
       </div>
@@ -420,7 +428,7 @@ color:green;
         <div class="product-details">
           <span class="product-name"><b>Kiwis</b><span style="margin-left: 120px;"> Rs 500-per kg</span></span>
           <span style="font-size: 12px; color:rgb(173, 169, 169)"><br>This is abc product description<br>This is a good product</span>
-          <div class="add-icon" style="margin-left: 220px; margin-top: -30px;">+</div>
+          <div class="add-icon" style="margin-left: 220px; margin-top: -30px;"onclick="addItem('Item 1', 10)">+</div>
         </div>
         
       </div>
@@ -429,7 +437,7 @@ color:green;
         <div class="product-details">
           <span class="product-name"><b>Bananas</b><span style="margin-left: 120px;"> Rs 100-per dozen</span></span>
           <span style="font-size: 12px; color:rgb(173, 169, 169)"><br>This is abc product description<br>This is a good product</span>
-          <div class="add-icon" style="margin-left: 220px; margin-top: -30px;">+</div>
+          <div class="add-icon" style="margin-left: 220px; margin-top: -30px;"onclick="addItem('Item 1', 10)">+</div>
         </div>
         
       </div>
@@ -438,7 +446,7 @@ color:green;
         <div class="product-details">
           <span class="product-name"><b>Apples</b><span style="margin-left: 110px;"> Rs 100-per kg</span></span>
           <span style="font-size: 12px; color:rgb(173, 169, 169)"><br>This is abc product description<br>This is a good product</span>
-          <div class="add-icon" style="margin-left: 220px; margin-top: -30px;">+</div>
+          <div class="add-icon" style="margin-left: 220px; margin-top: -30px;"onclick="addItem('Item 1', 10)">+</div>
         </div>
         
       </div>
@@ -447,7 +455,7 @@ color:green;
         <div class="product-details">
           <span class="product-name"><b>Onions</b><span style="margin-left: 130px;"> Rs 100-per kg</span></span>
           <span style="font-size: 12px; color:rgb(173, 169, 169)"><br>This is abc product description<br>This is a good product</span>
-          <div class="add-icon" style="margin-left: 220px; margin-top: -30px;">+</div>
+          <div class="add-icon" style="margin-left: 220px; margin-top: -30px;"onclick="addItem('Item 1', 10)">+</div>
         </div>
         
       </div>
@@ -456,7 +464,7 @@ color:green;
         <div class="product-details">
           <span class="product-name"><b>Tomatoes</b><span style="margin-left: 90px;"> Rs 300-per kg</span></span>
           <span style="font-size: 12px; color:rgb(173, 169, 169)"><br>This is abc product description<br>This is a good product</span>
-          <div class="add-icon" style="margin-left: 220px; margin-top: -30px;">+</div>
+          <div class="add-icon" style="margin-left: 220px; margin-top: -30px;"onclick="addItem('Item 1', 10)">+</div>
         </div>
         
       </div>
@@ -465,7 +473,7 @@ color:green;
         <div class="product-details">
           <span class="product-name"><b>Corriander</b><span style="margin-left: 100px;"> Rs 30-per kg</span></span>
           <span style="font-size: 12px; color:rgb(173, 169, 169)"><br>This is abc product description<br>This is a good product</span>
-          <div class="add-icon" style="margin-left: 220px; margin-top: -30px;">+</div>
+          <div class="add-icon" style="margin-left: 220px; margin-top: -30px;"onclick="addItem('Item 1', 10)">+</div>
         </div>
         
       </div>
@@ -474,7 +482,7 @@ color:green;
         <div class="product-details">
           <span class="product-name"><b>Podina</b><span style="margin-left: 110px;"> Rs 50-per kg</span></span>
           <span style="font-size: 12px; color:rgb(173, 169, 169)"><br>This is abc product description<br>This is a good product</span>
-          <div class="add-icon" style="margin-left: 220px; margin-top: -30px;">+</div>
+          <div class="add-icon" style="margin-left: 220px; margin-top: -30px;"onclick="addItem('Item 1', 10)">+</div>
         </div>
         
       </div>
@@ -483,7 +491,7 @@ color:green;
         <div class="product-details">
           <span class="product-name"><b>Green chiilis</b><span style="margin-left: 90px;"> Rs 100-per kg</span></span>
           <span style="font-size: 12px; color:rgb(173, 169, 169)"><br>This is abc product description<br>This is a good product</span>
-          <div class="add-icon" style="margin-left: 220px; margin-top: -30px;">+</div>
+          <div class="add-icon" style="margin-left: 220px; margin-top: -30px;"onclick="addItem('Item 1', 10)">+</div>
         </div>
         
       </div>
@@ -492,7 +500,7 @@ color:green;
         <div class="product-details">
           <span class="product-name"><b>Garlic</b><span style="margin-left: 110px;"> Rs 250-per gm</span></span>
           <span style="font-size: 12px; color:rgb(173, 169, 169)"><br>This is abc product description<br>This is a good product</span>
-          <div class="add-icon" style="margin-left: 220px; margin-top: -30px;">+</div>
+          <div class="add-icon" style="margin-left: 220px; margin-top: -30px;"onclick="addItem('Item 1', 10)">+</div>
         </div>
         
       </div>
@@ -501,7 +509,7 @@ color:green;
         <div class="product-details">
           <span class="product-name"><b>Ginger</b><span style="margin-left: 120px;"> Rs 100-per gm</span></span>
           <span style="font-size: 12px; color:rgb(173, 169, 169)"><br>This is abc product description<br>This is a good product</span>
-          <div class="add-icon" style="margin-left: 220px; margin-top: -30px;">+</div>
+          <div class="add-icon" style="margin-left: 220px; margin-top: -30px;"onclick="addItem('Item 1', 10)">+</div>
         </div>
         
       </div>
@@ -510,7 +518,7 @@ color:green;
         <div class="product-details">
           <span class="product-name"><b>Potatoes</b><span style="margin-left: 90px;"> Rs 100-per kg</span></span>
           <span style="font-size: 12px; color:rgb(173, 169, 169)"><br>This is abc product description<br>This is a good product</span>
-          <div class="add-icon" style="margin-left: 220px; margin-top: -30px;">+</div>
+          <div class="add-icon" style="margin-left: 220px; margin-top: -30px;"onclick="addItem('Item 1', 10)">+</div>
         </div>
         
       </div>
@@ -519,7 +527,7 @@ color:green;
         <div class="product-details">
           <span class="product-name"><b>Toilet Cleaner</b><span style="margin-left: 70px;"> Rs 100</span></span>
           <span style="font-size: 12px; color:rgb(173, 169, 169)"><br>This is abc product description<br>This is a good product</span>
-          <div class="add-icon" style="margin-left: 220px; margin-top: -30px;">+</div>
+          <div class="add-icon" style="margin-left: 220px; margin-top: -30px;"onclick="addItem('Item 1', 10)">+</div>
         </div>
         
       </div>
@@ -528,7 +536,7 @@ color:green;
         <div class="product-details">
           <span class="product-name"><b>Cooking Oil</b><span style="margin-left: 70px;"> Rs 100-per gm</span></span>
           <span style="font-size: 12px; color:rgb(173, 169, 169)"><br>This is abc product description<br>This is a good product</span>
-          <div class="add-icon" style="margin-left: 220px; margin-top: -30px;">+</div>
+          <div class="add-icon" style="margin-left: 220px; margin-top: -30px;"onclick="addItem('Item 1', 10)">+</div>
         </div>
         
       </div>
@@ -537,7 +545,7 @@ color:green;
         <div class="product-details">
           <span class="product-name"><b>Bread</b><span style="margin-left: 120px;"> Rs 70 </span></span>
           <span style="font-size: 12px; color:rgb(173, 169, 169)"><br>This is abc product description<br>This is a good product</span>
-          <div class="add-icon" style="margin-left: 220px; margin-top: -30px;">+</div>
+          <div class="add-icon" style="margin-left: 220px; margin-top: -30px;"onclick="addItem('Item 1', 10)">+</div>
         </div>
         
       </div>
@@ -546,7 +554,7 @@ color:green;
         <div class="product-details">
           <span class="product-name"><b>Eggs</b><span style="margin-left: 130px;"> Rs 150-per dozen</span></span>
           <span style="font-size: 12px; color:rgb(173, 169, 169)"><br>This is abc product description<br>This is a good product</span>
-          <div class="add-icon" style="margin-left: 220px; margin-top: -30px;">+</div>
+          <div class="add-icon" style="margin-left: 220px; margin-top: -30px;"onclick="addItem('Item 1', 10)">+</div>
         </div>
         
       </div>
@@ -555,7 +563,7 @@ color:green;
         <div class="product-details">
           <span class="product-name"><b>Butter</b><span style="margin-left: 120px;"> Rs 100-per gm</span></span>
           <span style="font-size: 12px; color:rgb(173, 169, 169)"><br>This is abc product description<br>This is a good product</span>
-          <div class="add-icon" style="margin-left: 220px; margin-top: -30px;">+</div>
+          <div class="add-icon" style="margin-left: 220px; margin-top: -30px;"onclick="addItem('Item 1', 10)">+</div>
         </div>
         
       </div>
@@ -564,7 +572,7 @@ color:green;
         <div class="product-details">
           <span class="product-name"><b>Washing Powder</b><span style="margin-left: 60px;"> Rs 100</span></span>
           <span style="font-size: 12px; color:rgb(173, 169, 169)"><br>This is abc product description<br>This is a good product</span>
-          <div class="add-icon" style="margin-left: 220px; margin-top: -30px;">+</div>
+          <div class="add-icon" style="margin-left: 220px; margin-top: -30px;"onclick="addItem('Item 1', 10)">+</div>
         </div>
         
       </div>

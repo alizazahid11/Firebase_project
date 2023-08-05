@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Cart</title>
+  <style>
+    .cart-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .cart-item img {
+      width: 50px;
+      height: 50px;
+      margin-right: 10px;
+    }
+
+    .quantity-selector {
+      display: flex;
+      align-items: center;
+    }
+
+    .quantity-selector button {
+      cursor: pointer;
+      background-color: #ccc;
+      border: none;
+      padding: 5px;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .quantity-box {
+      margin: 0 10px;
+      width: 30px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>Your Shopping Cart</h1>
+  <div id="cartItems">
+    <!-- JavaScript will populate the cart items here -->
+  </div>
+
+  <h2>Total: <span id="total">$0</span></h2>
+
+  <button onclick="clearCart()">Clear Cart</button> <!-- New Clear Cart button -->
+
+  <h2>Enter Your Details:</h2>
+  <form id="checkoutForm">
+    <!-- Form fields for user details -->
+    <button type="submit">Submit Order</button>
+  </form>
+
+  <script>
+    function renderCart() {
+      const cartItems = JSON.parse(localStorage.getItem('cartItems') || '[]');
+      const cartItemsContainer = document.getElementById('cartItems');
+      const totalElement = document.getElementById('total');
+
+      // Sample item data with images for demonstration
+      const items = [
+        { name: 'Item 1', price: 10, image: 'https://example.com/item1.jpg' },
+        { name: 'Item 2', price: 20, image: 'https://example.com/item2.jpg' },
+        // Add more items here with appropriate image URLs
+      ];
+
+      // Calculate total price and update cart items
+      let total = 0;
+      cartItemsContainer.innerHTML = '';
+      cartItems.forEach(item => {
+        const itemData = items.find(i => i.name === item.name);
+        if (itemData) {
+          item.qty = item.qty || 1; // Set the initial quantity to 1 if not already set
+          item.unitPrice = itemData.price; // Store the unit price for each item
+          item.price = item.qty * item.unitPrice; // Calculate the item's total price
+          total += item.price; // Update the total by adding the price of each item
+          const itemElement = document.createElement('div');
+          itemElement.classList.add('cart-item');
+          itemElement.innerHTML = `
+            <img src="${itemData.image}" alt="${itemData.name}">
+            <div>
+              <p>${itemData.name} - $${itemData.price}</p>
+              <div class="quantity-selector">
+                <button onclick="updateQuantity('${itemData.name}', -1)">-</button>
+                <div class="quantity-box">${item.qty}</div>
+                <button onclick="updateQuantity('${itemData.name}', 1)">+</button>
+              </div>
+            </div>
+          `;
+          cartItemsContainer.appendChild(itemElement);
+        }
+      });
+
+      totalElement.textContent = `$${total.toFixed(2)}`;
+      localStorage.setItem('cartItems', JSON.stringify(cartItems)); // Update cart items in localStorage
+    }
+
+    function updateQuantity(itemName, quantityChange) {
+      const cartItems = JSON.parse(localStorage.getItem('cartItems') || '[]');
+      const existingItem = cartItems.find(item => item.name === itemName);
+      if (existingItem) {
+        existingItem.qty += quantityChange;
+        existingItem.price = existingItem.qty * existingItem.unitPrice;
+        if (existingItem.qty <= 0) {
+          cartItems.splice(cartItems.indexOf(existingItem), 1);
+        }
+      }
+      localStorage.setItem('cartItems', JSON.stringify(cartItems));
+      renderCart();
+    }
+
+    function clearCart() {
+      localStorage.removeItem('cartItems');
+      renderCart();
+    }
+
+    renderCart();
+  </script>
+</body>
+</html>
+
+
+

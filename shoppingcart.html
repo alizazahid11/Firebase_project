@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Online Shop</title>
+</head>
+<body>
+  <h1>Welcome to My Online Shop</h1>
+  <p>Click on the items to add them to your cart:</p>
+  <div>
+    <button onclick="addItem('Item 1', 10)">Add Item 1 ($10)</button>
+    <button onclick="addItem('Item 2', 20)">Add Item 2 ($20)</button>
+    <!-- Add more buttons for other items -->
+  </div>
+  <script>
+    function addItem(itemName, price) {
+      const cartItems = JSON.parse(localStorage.getItem('cartItems') || '[]');
+      cartItems.push({ name: itemName, price: price });
+      localStorage.setItem('cartItems', JSON.stringify(cartItems));
+    }
+  </script>
+</body>
+</html>
