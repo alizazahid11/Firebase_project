@@ -187,9 +187,9 @@
                 .then((userCredential) => {
                     // Signed in 
                     var user = userCredential.user;
-                    writeUserData(user.uid, email, password,contact,username, role);
+                    writeUserData(user.uid, email, password,username, contact,role);
                     
-                    // const user=(username:username,password:password)
+                    // const user=(username:username,password:password)//ADD LOCAL STORAGE
                     console.log("user created successfully.... \n", user)
 
                     // window.location.href('')//home page
@@ -220,11 +220,16 @@
     //         });
     // }
 
-    function writeUserData(userId, email, password, role) {
+    function writeUserData(userId, password,email, contact,username,role) {
       firebase.database().ref('users/' + userId).set({
         userId: userId,
-        email: email,
+        
         password: password, 
+        email: email,
+        contact:contact,
+        
+      
+        username:username,
         role: role
       });
     }
