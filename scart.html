@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <title>Shopping Cart</title>
   <style>
     .cart-item {
       display: flex;
       align-items: center;
       margin-bottom: 10px;
+      margin-left: 450px;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      font-size: 20px;
     }
 
     .cart-item img {
@@ -36,22 +41,219 @@
       width: 30px;
       text-align: center;
     }
+
+    h1 {
+      color: rgb(17, 106, 179);
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      margin-left: 400px;
+      margin-top:100px;
+    }
+
+    h2 {
+      color: rgb(50, 149, 50);
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      margin-top: -30px;
+      margin-left: 400px;
+    }
+
+    h3 {
+      margin-left: 400px;
+      margin-top: 90px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    #total {
+      margin-left: 300px;
+      color: green;
+    }
+
+    .btn {
+      margin-left: 590px;
+      background-color: green;
+
+      color: white;
+
+      padding: 10px 20px;
+
+      border: none;
+
+      border-radius: 9px;
+
+      cursor: pointer;
+
+      font-size: 15px;
+
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      box-shadow: 0 6px 9px rgba(110, 109, 109, 0.3);
+    }
+
+    .form-group {
+      position: relative;
+      margin: 30px;
+      margin-left: 400px;
+
+    }
+
+    .form-group input {
+      width: 460px;
+      padding: -100px;
+      border: none;
+      border-bottom: 1px solid #ccc;
+      outline: none;
+      margin-top: -90px;
+
+
+    }
+
+    button {
+      justify-content: space-evenly;
+      margin-left: 10px;
+    }
+
+    .last-btn {
+      background-color: green;
+
+      color: white;
+
+      padding: 10px 80px;
+
+      border: none;
+
+      border-radius: 9px;
+
+      cursor: pointer;
+
+      font-size: 20px;
+
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      box-shadow: 0 6px 9px rgba(110, 109, 109, 0.3);
+      margin-left:500px;
+      margin-bottom: 50px;
+    }
+    .last-btn:hover{
+      background-color: darkgreen;
+    }
+    .btn:hover{
+      background-color: darkgreen;
+    }
+    nav {
+    background-color:green; 
+    height: 50px; 
+    position: fixed; 
+    top: 0; 
+    width: 100%;
+    margin-left: -8px; 
+    display: flex;
+      align-items: center;
+      justify-content: space-between;
+   
+  }
+
+  .navbar {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+  }
+
+  .navbar li {
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+  }
+
+  .navbar a {
+    color: white; 
+    text-decoration: none;
+    
+  }
+  .navbar a:hover {
+    color: rgb(11, 58, 15); /* Change the text color on hover */
+     transition: color 0.3s;
+  }
+   
+  .navbar i {
+    font-size: 20px;
+    margin-bottom: 5px; 
+  }
+  .icons {
+    color: white;
+    
+  }
+  .icons i:hover {
+    color: rgb(11, 58, 15); /* Change the text color on hover */
+     transition: color 0.3s;
+  }
   </style>
 </head>
+
 <body>
-  <h1>Your Shopping Cart</h1>
+  <nav>
+    <ul class="navbar">
+      <li><a href="./homepage.html"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="./scart.html"><i class="fas fa-shopping-cart white-icon"></i> Cart</a></li>
+      <li><a href="#"><i class="fas fa-user"></i> Account</a></li>
+    </ul>
+    <div class="icons">
+        <i class="fas fa-cog"></i> 
+        <i class="fas fa-plus-circle"></i>
+      </div>
+  </nav>
+  <h1>Shopping</h1>
+  <h2>Cart</h2>
   <div id="cartItems">
-    <!-- JavaScript will populate the cart items here -->
+
   </div>
 
-  <h2>Total: <span id="total">$0</span></h2>
+  <h3>Total: <span id="total">Rs0</span></h3>
 
-  <button onclick="clearCart()">Clear Cart</button> <!-- New Clear Cart button -->
+  <button onclick="clearCart()" class="btn">Clear Cart</button>
 
-  <h2>Enter Your Details:</h2>
-  <form id="checkoutForm">
-    <!-- Form fields for user details -->
-    <button type="submit">Submit Order</button>
+
+  <!-- <form id="checkoutForm"> -->
+  <form>
+    <div class="form-group">
+      <input type="text" id="name" name="username" placeholder="Full Name" required>
+      <div class="icon-container">
+      
+      </div>
+    </div>
+    <div class="form-group">
+      <input type="email" id="email" name="email" placeholder="Email" required>
+      <div class="icon-container">
+
+      </div>
+    </div>
+    <div class="form-group">
+      <input type="text" id="contact" name="contact" placeholder="Phone number" required>
+      <div class="icon-container">
+
+      </div>
+    </div>
+    <div class="form-group">
+      <input type="text" id="address" name="address" placeholder="Shipping Address" required>
+      <div class="icon-container">
+
+      </div>
+    </div>
+    <div class="form-group">
+      <input type="text" id="address" name="address" placeholder="" required>
+      <div class="icon-container">
+
+      </div>
+    </div>
+
+
+
+
+
+  </form>
+  <button type="submit" class="last-btn">Place Order</button>
   </form>
 
   <script>
@@ -93,8 +295,8 @@
         { name: 'bread', price: 70, image: 'https://upload.wikimedia.org/wikipedia/commons/3/33/Fresh_made_bread_05.jpg' },
         { name: 'eggs', price: 150, image: 'https://media.istockphoto.com/id/916185054/photo/group-of-three-white-eggs-isolated-on-white-background.jpg?s=612x612&w=0&k=20&c=y8Ju4ZXyJqHMNfm30qpPMh_ik8i1B_4Enih91pDuia8=' },
         { name: 'butter', price: 100, image: 'https://media.istockphoto.com/id/177834117/photo/butter-isolated-on-white.jpg?s=612x612&w=0&k=20&c=wKXNDSvB-tzfT9RPdmKsH2JAGpBv7OISdUmGdegupxg=' },
-        
-        
+
+
       ];
       // Calculate total price and update cart items
       let total = 0;
@@ -111,7 +313,7 @@
           itemElement.innerHTML = `
             <img src="${itemData.image}" alt="${itemData.name}">
             <div>
-              <p>${itemData.name} - $${itemData.price}</p>
+              <p>${itemData.name} - Rs${itemData.price}</p>
               <div class="quantity-selector">
                 <button onclick="updateQuantity('${itemData.name}', -1)">-</button>
                 <div class="quantity-box">${item.qty}</div>
@@ -123,7 +325,7 @@
         }
       });
 
-      totalElement.textContent = `$${total.toFixed(2)}`;
+      totalElement.textContent = `Rs${total.toFixed(2)}`;
       localStorage.setItem('cartItems', JSON.stringify(cartItems)); // Update cart items in localStorage
     }
 
@@ -149,7 +351,5 @@
     renderCart();
   </script>
 </body>
+
 </html>
-
-
-
