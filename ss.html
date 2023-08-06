@@ -60,13 +60,42 @@
       const cartItemsContainer = document.getElementById('cartItems');
       const totalElement = document.getElementById('total');
 
-      // Sample item data with images for demonstration
       const items = [
-        { name: 'Item 1', price: 10, image: 'https://example.com/item1.jpg' },
-        { name: 'Item 2', price: 20, image: 'https://example.com/item2.jpg' },
-        // Add more items here with appropriate image URLs
+        { name: 'Meat', price: 850, image: 'https://img.freepik.com/premium-photo/fresh-raw-beef-steak-isolated-white-background-with-clipping-path_228338-124.jpg' },
+        { name: 'Fish', price: 450, image: 'https://t3.ftcdn.net/jpg/02/91/35/16/360_F_291351618_2ggRlHpK6pSwjUNtgMqhdaYliUYA5Jox.jpg' },
+        { name: 'Beef Qeema', price: 800, image: 'https://img.freepik.com/premium-photo/raw-beef-minced-meat-surface_188078-7474.jpg?w=2000' },
+        { name: 'Chicken', price: 800, image: 'https://media.istockphoto.com/id/1085313230/photo/uncooked-chicken-legs-on-white-background.jpg?s=612x612&w=0&k=20&c=_MkbNakXWjog9u-Ev_IJPWpJ3SGfy_ZVnXR2sDcRTow=' },
+        { name: 'Prawns', price: 400, image: 'https://whistlerdelivery.ca/wp-content/uploads/2020/12/EAST-COAST-SHRIMP-MEAT.jpg' },
+        { name: 'goat meat', price: 1400, image: 'https://t4.ftcdn.net/jpg/02/75/48/41/360_F_275484134_TvyfqctvpG2mB9yjWPEYkiVDf3TyDsYX.jpg' },
+        { name: 'Chilli masala', price: 100, image: 'https://t3.ftcdn.net/jpg/03/17/92/38/360_F_317923891_RpjzsaGSLakesLcvTWPSMEt3nwonBedS.jpg' },
+        { name: 'Haldi Powder', price: 150, image: 'https://img.freepik.com/premium-photo/finely-dry-turmeric-powder-wooden-bow-with-rhizome-sliced-isolated-white-background_252965-34.jpg' },
+        { name: 'chat masala', price: 150, image: 'https://spiceitupp.com/wp-content/uploads/2019/02/Indian-chaat-masala-image-spiceitupp.jpg' },
+        { name: 'dhaniya powder', price: 150, image: 'https://img.freepik.com/premium-photo/coriander-powder-dhaniya-powder-white-background_55610-821.jpg?w=2000' },
+        { name: 'garam masala', price: 200, image: 'https://www.seriouseats.com/thmb/kcVRsgt94S0g9N9I2zljZiOt1fQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__serious_eats__seriouseats.com__recipes__images__2016__04__20150402-garam-masala-2879a150647d4403bdc0645e71a2ae0a.jpg' },
+        { name: 'salt', price: 50, image: 'https://st3.depositphotos.com/29339490/36218/i/450/depositphotos_362184038-stock-photo-salt-isolated-white-background.jpg' },
+        { name: 'oregano powder', price: 150, image: 'https://media.istockphoto.com/id/1369570819/photo/fresh-thyme-leaves-and-dried-thyme-leaf-powder.jpg?s=612x612&w=0&k=20&c=yJ48N9EkAv-lni9HLNCEU0VWwNlDAbqOPcKGt5N-spA=' },
+        { name: 'Garlic powder', price: 50, image: 'https://static.tossdown.com/images/34b9bf36-73c7-4b74-af39-629828d9de9e.jpg' },
+        { name: 'strawberries', price: 500, image: 'https://img.freepik.com/free-vector/realistic-berries-composition-with-isolated-image-strawberry-with-ripe-leaves-blank-background-vector-illustration_1284-66036.jpg?w=2000' },
+        { name: 'Mangoes', price: 200, image: 'https://nutriworks.in/wp-content/uploads/2018/04/mango.jpg' },
+        { name: 'cherries', price: 300, image: 'https://media.istockphoto.com/id/464387287/photo/bunch-of-cherries.jpg?s=612x612&w=0&k=20&c=nL3BAsDDKN24jriZexcCsRAA3Q62mBsy4ORSPOG5_sk=' },
+        { name: 'kiwi', price: 500, image: 'https://d3mvlb3hz2g78.cloudfront.net/wp-content/uploads/2012/10/thumb_720_450_Kiwi_shutterstock_84220885-1.jpg' },
+        { name: 'bananas', price: 100, image: 'https://media.istockphoto.com/id/173242750/photo/banana-bunch.jpg?s=612x612&w=0&k=20&c=MAc8AXVz5KxwWeEmh75WwH6j_HouRczBFAhulLAtRUU=' },
+        { name: 'apples', price: 100, image: 'https://st4.depositphotos.com/1642482/26479/i/600/depositphotos_264793476-stock-photo-red-apple-isolated-on-white.jpg' },
+        { name: 'onions', price: 100, image: 'https://images.all-free-download.com/images/graphiclarge/onion_highdefinition_picture_168357.jpg' },
+        { name: 'tomatoes', price: 300, image: 'https://media.istockphoto.com/id/91476821/photo/three-tomatoes.jpg?s=612x612&w=0&k=20&c=s_Vnlu9yQZmpQfnODC_BBS-Pda_FMolVTy9yiRaOfCY=' },
+        { name: 'corriander', price: 30, image: 'https://4.imimg.com/data4/PU/ET/MY-27614817/coriander-leaf-500x500-500x500.jpg' },
+        { name: 'podina', price: 50, image: 'https://dsmonline.pk/wp-content/uploads/2022/05/podina.jpg' },
+        { name: 'green chillis', price: 100, image: 'https://baazwsh.com/cdn/shop/products/green-chilli-hari-mirch-250g-baazwsh-388555.jpg?v=1633238627' },
+        { name: 'garlic', price: 250, image: 'https://freshbuy.pk/wp-content/uploads/2022/11/Garlic-China.jpg' },
+        { name: 'ginger', price: 100, image: 'https://media.istockphoto.com/id/511851020/photo/fresh-ginger-root-or-rhizome-isolated-on-white-background-cutout.jpg?s=612x612&w=0&k=20&c=3EGls2tS0ml61Y_KEw-BlH6MsZoZm9owHFl2VFHy-8c=' },
+        { name: 'potatoes', price: 100, image: 'https://media.istockphoto.com/id/157430678/photo/three-potatoes.jpg?s=170667a&w=0&k=20&c=7Lqq__k5r5sNefgzXOJKVHASou4xADdT27O5dVtMuos=' },
+        { name: 'cooking oil', price: 100, image: 'https://media.istockphoto.com/id/1156384992/photo/olive-oil-on-white.jpg?s=612x612&w=0&k=20&c=uz2WWZV0GdbJAJXcwNQvQVtj-R9Y-O6BVPEkhAc1ZQA=' },
+        { name: 'bread', price: 70, image: 'https://upload.wikimedia.org/wikipedia/commons/3/33/Fresh_made_bread_05.jpg' },
+        { name: 'eggs', price: 150, image: 'https://media.istockphoto.com/id/916185054/photo/group-of-three-white-eggs-isolated-on-white-background.jpg?s=612x612&w=0&k=20&c=y8Ju4ZXyJqHMNfm30qpPMh_ik8i1B_4Enih91pDuia8=' },
+        { name: 'butter', price: 100, image: 'https://media.istockphoto.com/id/177834117/photo/butter-isolated-on-white.jpg?s=612x612&w=0&k=20&c=wKXNDSvB-tzfT9RPdmKsH2JAGpBv7OISdUmGdegupxg=' },
+        
+        
       ];
-
       // Calculate total price and update cart items
       let total = 0;
       cartItemsContainer.innerHTML = '';

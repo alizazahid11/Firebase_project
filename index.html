@@ -186,10 +186,12 @@
             firebase.auth().createUserWithEmailAndPassword(email, password)
                 .then((userCredential) => {
                     // Signed in 
+                    const users=(email:email);//ADD LOCAL STORAGE
+                    localStorage.setItem('user',JSON.stringify(users))
                     var user = userCredential.user;
                     writeUserData(user.uid, email, password,username, contact,role);
                     
-                    // const user=(username:username,password:password)//ADD LOCAL STORAGE
+                    
                     console.log("user created successfully.... \n", user)
 
                     // window.location.href('')//home page
@@ -201,7 +203,14 @@
                     console.error("signup error:", errorCode, errorMessage);
                 });
         }
-
+// function isAuthenticated(){
+//   const users=localStorage.getItem('user');
+//   return users.email!=null;
+// }
+// if (!isAuthenticated){
+//   window.location.href='../'//sign in html path 
+// }
+//signin signup p no protected
 
     // function logIn() {
     //     let email = document.getElementById("name").value;
