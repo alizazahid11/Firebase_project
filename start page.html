@@ -35,6 +35,26 @@
 </style>
 </head>
 <body>
+  <!-- Add Firebase JavaScript SDK -->
+  <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-auth.js"></script>
+
+  <script type="text/javascript">
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyApMbd9Sncf9LWCqPLWS6Vj1Bm7beaOKF4",
+      authDomain: "smit-project-751b0.firebaseapp.com",
+      projectId: "smit-project-751b0",
+      storageBucket: "smit-project-751b0.appspot.com",
+      messagingSenderId: "824922240767",
+      appId: "1:824922240767:web:e6f9a800f7f2a10c3a3eca",
+      measurementId: "G-2T2Q9N891D"
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    // Initialize Realtime Database and get a reference to the service
+    const database = firebase.database();</script>
 <center><img src="Capture.PNG">
 <h1 >SAYLANI WELFARE</h1>
 <h3>ONLINE DISCOUNT STORE</h3>

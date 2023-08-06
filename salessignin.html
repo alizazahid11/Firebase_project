@@ -102,12 +102,12 @@ line-height: 1.5;
   <h1>SAYLANI WELFARE</h1>
   <h4>ONLINE MARKET PLACE</h3>
     <form>
-        <div class="form-group">
+        <!-- <div class="form-group">
           <input type="text" id="username" name="username" placeholder="User Name" required >
           <div class="icon-container">
             <i class="fas fa-user"></i>
           </div>
-        </div>
+        </div> -->
        
        
           <div class="form-group">
@@ -165,19 +165,28 @@ line-height: 1.5;
         function signin() {
             let email = document.getElementById("email").value;
             let password = document.getElementById("password").value;
-            firebase.auth().createUserWithEmailAndPassword(email, password)
+            firebase.auth().signInWithEmailAndPassword(email, password)
                 .then((userCredential) => {
                     // Signed in 
                     var user = userCredential.user;
                     writeUserData(user.uid, email, password);
                     console.log("user created successfully.... \n", user)
-                    
+                    const dbRef = firebase.database().ref();
+dbRef.child("users").child(userId).get().then((snapshot) => {
+  if (snapshot.exists()) {
+    console.log(snapshot.val());
+  } else {
+    console.log("No data available");
+  }
+}).catch((error) => {
+  console.error(error);
+});
                     // ...
                 })
                 .catch((error) => {
                     var errorCode = error.code;
                     var errorMessage = error.message;
-                    console.error("Login error:", errorCode, errorMessage);
+                    console.error("Signin error:", errorCode, errorMessage);
                 });
         }
 
