@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Navigation Bar</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+ 
+  <style>
+    nav {
+    background-color:green; 
+    height: 50px; 
+    position: fixed; 
+    top: 0; 
+    width: 100%;
+    margin-left: -8px; 
+    display: flex;
+      align-items: center;
+      justify-content: space-between;
+   
+  }
+
+  .navbar {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+  }
+
+  .navbar li {
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+  }
+
+  .navbar a {
+    color: white; 
+    text-decoration: none;
+    
+  }
+  .navbar a:hover {
+    color: rgb(11, 58, 15); /* Change the text color on hover */
+     transition: color 0.3s;
+  }
+   
+  .navbar i {
+    font-size: 20px;
+    margin-bottom: 5px; 
+  }
+  .icons {
+    color: white;
+    
+  }
+  .icons i:hover {
+    color: rgb(11, 58, 15); /* Change the text color on hover */
+     transition: color 0.3s;
+     cursor: pointer;
+
+  }
+  .file-input input {
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      cursor: pointer;
+    }
+    
+    .file-container {
+      position: relative;
+      text-align: center;
+    }
+
+    .file-input {
+      width: 500px;
+      height: 200px;
+      border: 2px solid #ccc;
+      background-color: rgb(177, 174, 174);
+      border-radius: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+     margin-top:-5px;
+    margin-left:-110px;
+
+    
+    }
+
+    .camera-icon {
+      font-size: 60px;
+      color: #ccc;
+      margin-left:20px;
+      width:55px;
+    }
+    form {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    .form-group {
+      margin-bottom: 10px;
+      margin-top: -20px;
+     
+    }
+
+    .photo-container {
+      position: relative;
+      text-align: center;
+    }
+
+    .photo-container img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      border: 2px solid #ccc;
+    }
+
+    .camera-icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 24px;
+      color: #ccc;
+      cursor: pointer;
+    }
+    input[type="text"],
+    select,
+    textarea {
+      width: 70%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      font-size: 16px;
+      margin-left:-550px;
+     
+      
+    }
+    .form-group input[type="text"] {
+      
+      background-color: #c0bcbc; /* Set the background color to grey */
+    }
+
+    select {
+      height: 40px;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+    .addi{
+        margin-left:65px;
+        border-radius: 35px;
+        cursor: pointer;
+        height: 30px;
+        width:70px;
+        margin-right: -420px;
+        background-color: green;
+        color: white;
+
+        box-shadow: 0 6px 9px rgba(110, 109, 109, 0.3);
+        border: 2px solid green;
+    }
+    h3{
+        margin-right:800px;
+        color:blue;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size:35px;
+    }
+    .container button {
+    background-color: green;
+    color: white;
+    padding: 10px 80px; 
+    border: none;
+    border-radius: 9px; 
+    cursor: pointer; 
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    box-shadow: 0 0 0 4px rgb(190, 188, 188); 
+   
+    
+  }
+
+  .container button:hover {
+    background-color: darkgreen;
+  }
+  .button {
+    background-color: white;
+    color: green;
+    border-color: rgb(196, 194, 194);
+    padding: 10px 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    height:80px;
+    width:200px;
+    margin-bottom: 40px;
+  
+  }
+
+  .button:hover {
+    background-color: green;
+    color: white;
+  }
+ 
+
+    .settings-container {
+      text-align: center;
+      padding: 20px;
+    
+      border-radius: 10px;
+      color:blue;
+
+    }
+
+    .profile-logo {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background-color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 20px auto;
+    
+    }
+
+    .profile-logo img {
+      max-width: 80%;
+      max-height: 80%;
+    }
+
+    .update-full-name {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      margin-top: 20px;
+     text-align: center;
+      border-radius: 5px;
+      color: black;
+      margin-bottom: 40px;;
+      margin-left: 550px;;
+    }
+
+    .green-tick {
+      width: 30px;
+      height: 30px;
+      background-color: #27ae60;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .green-tick img {
+      max-width: 60%;
+      max-height: 60%;
+    }
+    h1{
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    .form-group {
+      position: relative;
+      margin: 70px;
+    }
+
+    .form-group input {
+      width: 360px;
+      padding: -100px;
+      border: none;
+      border-bottom: 1px solid #ccc;
+      outline: none;
+      margin-top:-90px;
+      
+    
+    }
+    .icon-container {
+      position: absolute;
+      right: 420px;
+      bottom: 5px;
+      margin-right:50px;
+    
+    }
+
+    .icon-container i {
+      color: #999;
+    }
+    .logout-button {
+      background-color: green;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      box-shadow: 0 6px 9px rgba(110, 109, 109, 0.3);
+    }
+    .container button:hover {
+      background-color: darkgreen; /* Darker green on hover */
+    }
+   
+    </style>
+<body>
+    <nav>
+      <ul class="navbar">
+        <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="./additem.html"><i class="fas fa-plus"></i> Add Items</a></li>
+        <li><a href="#"><i class="fas fa-user"></i> Account</a></li>
+      </ul>
+      <div class="icons">
+          <i class="fas fa-cog"></i> 
+          <i class="fas fa-plus-circle"></i>
+        </div>
+    </nav>
+    <div class="settings-container">
+        <h1>Settings</h1>
+        <div class="profile-logo">
+          <img src="https://cdn-icons-png.flaticon.com/512/4128/4128176.png" alt="Profile Logo">
+        </div>
+        <div class="form-group">
+            <input type="email" id="email" name="email" placeholder="Update full name" required>
+            <div class="icon-container">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="20" fill="green" viewBox="0 0 24 24">
+                    <path d="M0 11l2-2 5 5L18 3l2 2L7 18z"/>
+                </svg>
+            </div>
+      </div>
+    <form>
+    <div class="form-group file-container">
+      
+        <div class="file-input">
+            <i class="camera-icon fas fa-camera"></i>
+          <input type="file" id="photo" accept="image/*" capture="camera" name="photo">
+        </div>
+      </div>
+      <br><br>
+      <div class="form-group" style="width:430px; border-radius: 90px; margin-top: -70px;; ">
+    <input type="text" id="item-name" name="item-name" required placeholder=" new category name"><button class="addi">ADD</button>
+</div>
+</form>
+<h3>All Categories</h3>
+ <center><button class="button" style="margin-left: -650px; width:400px;">
+    <a href=./salescategory.html  style="text-decoration: none; color:green;">    <img src="https://static.vecteezy.com/system/resources/previews/008/848/372/original/fresh-red-strawberry-fruit-free-png.png" height="50" width="50"> </a>Fruits
+    </button>
+  
+    <button class="button" style="margin-left: -50px;margin-right: -500px; margin-top: -120px;width:400px;">
+      <img src="https://www.transparentpng.com/thumb/olive-oil/olive-pomace-oil-png-8.png"height="50" width="30" style="padding:10px">  Oil
+    </button>
+  
+    <button class="button" style="margin-left: -650px;width:400px;">
+      <img src="https://w7.pngwing.com/pngs/658/445/png-transparent-raw-meat-with-spices-red-meat-beef-steak-food-beef-meat-beef-roast-beef-supermarket.png" height="30" width="50"> Meat
+    </button>
+  
+    <button class="button"style="margin-right: -500px; margin-top: -120px;width:400px;margin-left: -50px;">
+      <img src="https://static.vecteezy.com/system/resources/previews/013/526/616/original/nuts-on-a-transparent-background-free-png.png" height="50" width="50"> Dry Fruits
+    </button>
+  
+    <button class="button" style="margin-left: -650px;width:400px;">
+      <img src="https://pics.clipartpng.com/Carrots_PNG_Clipart-465.png" height="50" width="50"> Vegetable
+    </button>
+  
+    <button class="button" style="margin-right: -500px; margin-top: -120px;width:400px;margin-left: -50px;">
+      <img src="https://image.similarpng.com/very-thumbnail/2021/07/Crab-isolated-.png"height='50' width="50">Seafood
+    </button>
+    <button class="button" style="margin-left: -650px;width:400px;">
+        <img src="https://www.seriouseats.com/thmb/oyNH4JW4M_wjjkzJKa689803fuI=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__serious_eats__seriouseats.com__images__2014__07__20140728-indian-spices-masala-dabba-burger-shutterstock-1-5ee33b1aac29404e831594b53b7986d6.jpg" height="50" width="50"> Masalas
+      </button>
+    
+      <button class="button" style="margin-right: -500px; margin-top: -120px;width:400px;margin-left: -50px;">
+        <img src="https://thumbs.dreamstime.com/b/lots-groceries-17001094.jpg"height='50' width="50">Grocery
+      </button></center>
+      <div class="container">
+        <button class="logout-button" >Logout</button>
+        <!-- <button onclick="logIn()">Login</button> -->
+    </div>
