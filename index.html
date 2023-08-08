@@ -174,74 +174,108 @@
     // Initialize Realtime Database and get a reference to the service
     const database = firebase.database();
 
-   
-    
-    
-      function signup() {
-            let email = document.getElementById("email").value;
-            let password = document.getElementById("password").value;
-            let username=document.getElementById("username").value;
-            let contact=document.getElementById("contact").value;
-            let role='user';
-            firebase.auth().createUserWithEmailAndPassword(email, password)
-                .then((userCredential) => {
-                    // Signed in 
-                    const users=(email:email);//ADD LOCAL STORAGE
-                    localStorage.setItem('user',JSON.stringify(users))
-                    var user = userCredential.user;
-                    writeUserData(user.uid, email, password,username, contact,role);
-                    
-                    
-                    console.log("user created successfully.... \n", user)
+    const signup = () => {
+    let username = document.getElementById('username').value;
+    let contact = document.getElementById('contact').value;
+    let email = document.getElementById('email').value;
+    let password = document.getElementById('password').value;
+    let role = 'User'
 
-                    // window.location.href('')//home page
-                    // ...
+    console.log(email, password)
+    firebase.auth().createUserWithEmailAndPassword(email, password)
+        .then((userCredential) => {
+            let user = userCredential.user;
+            firebase.database().ref('users/' + user.uid).set({
+                uid: user.uid,
+                username: username,
+                role: role,
+                contact: contact,
+                email: email,
+                password: password
+            })
+                .then(() => {
+                    const user = { email: email };
+                    localStorage.setItem('user', JSON.stringify(user));
+                    console.log('User created successfully.')
+                    window.location.href = 'http://127.0.0.1:5500/homepage.html'
                 })
                 .catch((error) => {
-                    var errorCode = error.code;
-                    var errorMessage = error.message;
-                    console.error("signup error:", errorCode, errorMessage);
-                });
-        }
-// function isAuthenticated(){
-//   const users=localStorage.getItem('user');
-//   return users.email!=null;
-// }
-// if (!isAuthenticated){
-//   window.location.href='../'//sign in html path 
-// }
-//signin signup p no protected
+                    console.log(error);
+                })
+        })
+        .catch((error) => {
+            let errorCode = error.code;
+            let errorMessage = error.message;
+            console.log(errorCode + ': ' + errorMessage)
+        });
+}
+    
+    
+//       function signup() {
+//             let email = document.getElementById("email").value;
+//             let password = document.getElementById("password").value;
+//             let username=document.getElementById("username").value;
+//             let contact=document.getElementById("contact").value;
+//             let role='user';
+//             firebase.auth().createUserWithEmailAndPassword(email, password)
+//                 .then((userCredential) => {
+//                     // Signed in 
+//                     let user = { email: email };
+//                     localStorage.setItem('user', JSON.stringify(user));
+//                     var user = userCredential.user;
+//                     writeUserData(user.uid, email, password,username, contact,role);
+                    
+                    
+//                     console.log("user created successfully.... \n", user)
 
-    // function logIn() {
-    //     let email = document.getElementById("name").value;
-    //     let password = document.getElementById("password").value;
+//                     window.location.href('../homepage.html')//home page
+//                     // ...
+//                 })
+//                 .catch((error) => {
+//                     var errorCode = error.code;
+//                     var errorMessage = error.message;
+//                     console.error("signup error:", errorCode, errorMessage);
+//                 });
+//         }
+// // function isAuthenticated(){
+// //   const users=localStorage.getItem('user');
+// //   return users.email!=null;
+// // }
+// // if (!isAuthenticated){
+// //   window.location.href='../'//sign in html path 
+// // }
+// //signin signup p no protected
 
-    //     firebase.auth().signInWithEmailAndPassword(email, password)
-    //         .then((userCredential) => {
-    //                 var user = userCredential.user;
-    //                 console.log('User signed in successfully... \n', user);
+//     // function logIn() {
+//     //     let email = document.getElementById("name").value;
+//     //     let password = document.getElementById("password").value;
 
-    //         })
-    //         .catch((error) => {
-    //             var errorCode = error.code;
-    //             var errorMessage = error.message;
-    //             console.log("Login error:", errorCode, errorMessage);
-    //         });
-    // }
+//     //     firebase.auth().signInWithEmailAndPassword(email, password)
+//     //         .then((userCredential) => {
+//     //                 var user = userCredential.user;
+//     //                 console.log('User signed in successfully... \n', user);
 
-    function writeUserData(userId, password,email, contact,username,role) {
-      firebase.database().ref('users/' + userId).set({
-        userId: userId,
+//     //         })
+//     //         .catch((error) => {
+//     //             var errorCode = error.code;
+//     //             var errorMessage = error.message;
+//     //             console.log("Login error:", errorCode, errorMessage);
+//     //         });
+//     // }
+
+//     function writeUserData(userId, password,email, contact,username,role) {
+//       firebase.database().ref('users/' + userId).set({
+//         userId: userId,
         
-        password: password, 
-        email: email,
-        contact:contact,
+//         password: password, 
+//         email: email,
+//         contact:contact,
         
       
-        username:username,
-        role: role
-      });
-    }
+//         username:username,
+//         role: role
+//       });
+//     }
   </script>
 </body>
 
