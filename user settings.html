@@ -41,7 +41,7 @@
     
   }
   .navbar a:hover {
-    color: rgb(11, 58, 15); /* Change the text color on hover */
+    color: rgb(11, 58, 15); 
      transition: color 0.3s;
   }
    
@@ -56,7 +56,100 @@
   .icons i:hover {
     color: rgb(11, 58, 15); 
      transition: color 0.3s;
-  }</style>  
+  }
+  .settings-container {
+      text-align: center;
+      padding: 20px;
+    
+      border-radius: 10px;
+      color:blue;
+
+    }
+
+    .profile-logo {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background-color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 20px auto;
+    
+    }
+
+    .profile-logo img {
+      max-width: 80%;
+      max-height: 80%;
+    }
+
+    .update-full-name {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      margin-top: 20px;
+     text-align: center;
+      border-radius: 5px;
+      color: black;
+      margin-bottom: 40px;;
+      margin-left: 550px;;
+    }
+
+    .green-tick {
+      width: 30px;
+      height: 30px;
+      background-color: #27ae60;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .green-tick img {
+      max-width: 60%;
+      max-height: 60%;
+    }
+  .form-group {
+      position: relative;
+      margin: 70px;
+    }
+
+    .form-group input {
+      width: 360px;
+      padding: -100px;
+      border: none;
+      border-bottom: 1px solid #ccc;
+      outline: none;
+      margin-top:-90px;
+      
+    
+    }
+    .icon-container {
+      position: absolute;
+      right: 420px;
+      bottom: 5px;
+      margin-right:50px;
+    
+    }
+
+    .icon-container i {
+      color: #999;
+    }
+    .logout-button {
+      background-color: green;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      box-shadow: 0 9px 9px rgba(110, 109, 109, 0.3);
+      width:200px;
+    }
+    .container button:hover {
+      background-color: darkgreen; /* Darker green on hover */
+    }
+  </style>  
 </head>
 
   <body>
@@ -66,9 +159,23 @@
         <li><a href="./scart.html"><i class="fas fa-shopping-cart white-icon"></i> Cart</a></li>
         <li><a href="#"><i class="fas fa-user"></i> Account</a></li>
       </ul>
-      <div class="icons">
-          <i class="fas fa-cog"></i> 
-          <i class="fas fa-plus-circle"></i>
-        </div>
+      
     </nav>
+    <div class="settings-container">
+      <h1>Settings</h1>
+      <div class="profile-logo">
+        <img src="https://cdn-icons-png.flaticon.com/512/4128/4128176.png" alt="Profile Logo">
+      </div>
+      <div class="form-group">
+          <input type="email" id="email" name="email" placeholder="Update full name" required>
+          <div class="icon-container">
+              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="20" fill="green" viewBox="0 0 24 24">
+                  <path d="M0 11l2-2 5 5L18 3l2 2L7 18z"/>
+              </svg>
+          </div>
+    </div>
+    <div class="container">
+      <button class="logout-button" >Logout</button>
+     
+  </div>
   </body>
