@@ -183,66 +183,102 @@
     // Initialize Realtime Database and get a reference to the service
     const database = firebase.database();
 
-    function signin() {
-      let email = document.getElementById("email").value;
-      let password = document.getElementById("password").value;
-      firebase.auth().signInWithEmailAndPassword(email, password)
+//     function signin() {
+//       let email = document.getElementById("email").value;
+//       let password = document.getElementById("password").value;
+//       firebase.auth().signInWithEmailAndPassword(email, password)
+//         .then((userCredential) => {
+//           // Signed in 
+//           var user = userCredential.user;
+//           writeUserData(user.uid, email, password);
+//           console.log("user created successfully.... \n", user)
+//           const dbRef = firebase.database().ref();
+//           dbRef.child("users").child(userId).get().then((snapshot) => {
+//             if (snapshot.exists()) {
+//               // console.log(snapshot.val());
+//               const userData=snapshot.val()
+//               if(userData.role==="Admin")
+//               window.location.href('')//admin ka first page
+//               {
+// else{
+//     window.location.href('')//home page(../ghj/gfggh/.html)
+// }
+//               }
+//             } else {
+//               console.log("No data available");
+//             }
+//           }).catch((error) => {
+//             console.error(error);
+//           });
+//           // ...
+//         })
+//         .catch((error) => {
+//           var errorCode = error.code;
+//           var errorMessage = error.message;
+//           console.error("Signin error:", errorCode, errorMessage);
+//         });
+//     }
+
+//     // function logIn() {
+//     //     let email = document.getElementById("name").value;
+//     //     let password = document.getElementById("password").value;
+
+//     //     firebase.auth().signInWithEmailAndPassword(email, password)
+//     //         .then((userCredential) => {
+//     //                 var user = userCredential.user;
+//     //                 console.log('User signed in successfully... \n', user);
+
+//     //         })
+//     //         .catch((error) => {
+//     //             var errorCode = error.code;
+//     //             var errorMessage = error.message;
+//     //             console.log("Login error:", errorCode, errorMessage);
+//     //         });
+//     // }
+
+//     function writeUserData(userId, email, password) {
+//       firebase.database().ref('users/' + userId).set({
+//         userId: userId,
+//         email: email,
+//         password: password
+//       });
+//     }
+const signin = () => {
+    let email = document.getElementById('email').value
+    let password = document.getElementById('password').value
+    firebase.auth().signInWithEmailAndPassword(email, password)
         .then((userCredential) => {
-          // Signed in 
-          var user = userCredential.user;
-          writeUserData(user.uid, email, password);
-          console.log("user created successfully.... \n", user)
-          const dbRef = firebase.database().ref();
-          dbRef.child("users").child(userId).get().then((snapshot) => {
-            if (snapshot.exists()) {
-              // console.log(snapshot.val());
-              const userData=snapshot.val()
-              if(userData.role==="Admin")
-              window.location.href('')//admin ka first page
-              {
-else{
-    window.location.href('')//home page(../ghj/gfggh/.html)
-}
-              }
-            } else {
-              console.log("No data available");
-            }
-          }).catch((error) => {
-            console.error(error);
-          });
-          // ...
+            let user = userCredential.user;
+            console.log(user)
+            const dbRef = firebase.database().ref();
+            dbRef.child("users").child(user.uid).get().then((snapshot) => {
+                if (snapshot.exists()) {
+                    const userData = snapshot.val()
+                    if (userData.role === 'Admin') {
+                        const user = { email: email };
+                        localStorage.setItem('user', JSON.stringify(user));
+                        console.log('User created successfully.')
+                        window.location.href = 'file:///E:/SMIT%20project/salescategory.html'
+                    }
+                    else {
+                        const user = { email: email };
+                        localStorage.setItem('user', JSON.stringify(user));
+                        window.location.href = 'file:///E:/SMIT%20project/homepage.html'
+                    }
+                } else {
+                    console.log("No data available");
+                }
+            }).catch((error) => {
+                console.error(error);
+            });
         })
         .catch((error) => {
-          var errorCode = error.code;
-          var errorMessage = error.message;
-          console.error("Signin error:", errorCode, errorMessage);
+            let errorCode = error.code;
+            let errorMessage = error.message;
+            console.log(errorCode + ': ' + errorMessage)
         });
-    }
 
-    // function logIn() {
-    //     let email = document.getElementById("name").value;
-    //     let password = document.getElementById("password").value;
-
-    //     firebase.auth().signInWithEmailAndPassword(email, password)
-    //         .then((userCredential) => {
-    //                 var user = userCredential.user;
-    //                 console.log('User signed in successfully... \n', user);
-
-    //         })
-    //         .catch((error) => {
-    //             var errorCode = error.code;
-    //             var errorMessage = error.message;
-    //             console.log("Login error:", errorCode, errorMessage);
-    //         });
-    // }
-
-    function writeUserData(userId, email, password) {
-      firebase.database().ref('users/' + userId).set({
-        userId: userId,
-        email: email,
-        password: password
-      });
-    }
+}
   </script>
 </body>
 
