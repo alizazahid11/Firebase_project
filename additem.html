@@ -3,7 +3,10 @@
 <head>
   <title>Navigation Bar</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  
+  <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-auth.js"></script>
+
+  <script src="./file-upload.js"></script>
   <style>
     nav {
     background-color:green; 
@@ -289,10 +292,12 @@ margin-left:55px;
     <div class="form-group" style="width:450px; ">
     <select id="category" name="category" required >
       <option value="" >Select a category</option>
-      <option value="electronics">Electronics</option>
-      <option value="clothing">Clothing</option>
-      <option value="home-appliances">Home Appliances</option>
-      <!-- Add more categories as needed -->
+      <option value="electronics">Groceries</option>
+      <option value="clothing">Meat</option>
+      <option value="home-appliances">Masalas</option>
+      <option value="home-appliances">Vegetables</option>
+      <option value="home-appliances">fruits</option>
+   
     </select>
 </div>
     <br><br>
@@ -304,7 +309,7 @@ margin-left:55px;
     
     <div class="input-container" >
         <label for="unit-price">Unit Name:</label>
-    <input type="text" id="unit-price" name="unit-price" required placeholder="Kg/dozen/gm" id="up" style="height:20px;  border: 1px solid #7b7676; "></div> 
+    <input type="text" id="unit-name" name="unit-price" required placeholder="Kg/dozen/gm" id="up" style="height:20px;  border: 1px solid #7b7676; "></div> 
         
     <br><br>
     <div class="input-container" >
@@ -314,6 +319,18 @@ margin-left:55px;
    <center> <div class="form-group">
     <input type="submit" value="Add Product"></div></center>
   </form>
+  
+  <script>
+    // Handle file input change event
+    const fileInput = document.getElementById('photo'); // Correctly select the file input by its ID
+    fileInput.addEventListener('change', (event) => {
+        const file = event.target.files[0];
+        if (file) {
+            fileUpload(file); // Call the fileUpload function to start the upload process
+        }
+    });
+</script>
+
 </body>
 </html>
  
