@@ -224,12 +224,12 @@ var signup = () => {
     let contact = document.getElementById('contact').value;
     let email = document.getElementById('email').value;
     let password = document.getElementById('password').value;
-    let securityCode = document.getElementById('securityCode').value;
+    
     let adminIdentifier = '@admin.com';
 
 let role = email.endsWith(adminIdentifier) ? 'Admin' : 'User';
 
-const correctSecurityCode = 'admin123';
+
     console.log(email, password);
     
     firebase.auth().createUserWithEmailAndPassword(email, password)
@@ -247,13 +247,9 @@ const correctSecurityCode = 'admin123';
                 const user = { email: email };
                 localStorage.setItem('user', JSON.stringify(user));
                 console.log('Admins id created successfully.');
-                if (role === 'Admin' && securityCode === correctSecurityCode) {
-                    window.location.href = 'file:///E:/SMIT%20project/salescategory.html';
-                }    else if (role === 'Admin') {
-      
-        alert('Error: This is not the admin security code.');
-    } 
-                else {
+                if (role === 'Admin') {
+                    window.location.href = 'E:\SMIT project\salescategory.html';
+                } else {
                     window.location.href = 'file:///E:/SMIT%20project/homepage.html';
                 }
             })
