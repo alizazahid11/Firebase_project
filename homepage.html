@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html>
+
 <head>
   <title>Home page</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  
+
   <style>
     nav {
     background-color:green; 
@@ -598,3 +598,23 @@ color:green;
       </div>
      
   </div>
+  <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-auth.js"></script>
+  <script src="./signup.html"></script>
+  <script src="./salessignin.html"></script>
+  <script src="./protected.js"></script>
+  <script>
+    // Function to check if the user is authenticated
+    function isAuthenticated() {
+        const user = localStorage.getItem('user');
+        return user !== null;
+    }
+
+    // Check if the user is authenticated
+    if (!isAuthenticated()) {
+        alert("You need to sign up or sign in to access this page.");
+        window.location.href = 'file:///E:/SMIT%20project/signup.html';
+    }
+</script>
+  </body>
+  </html>
