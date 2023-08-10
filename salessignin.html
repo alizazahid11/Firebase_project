@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-
-  <title>Saylani Welfare sign in</title>
+<title>Saylani Welfare sign in</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
@@ -110,6 +108,51 @@
       background-color: darkgreen;
       /* Darker green on hover */
     }
+    @media screen and (max-width: 480px) {
+      h1 {
+        font-size: 20px;
+      }
+
+      h4 {
+        font-size: 16px;
+        padding:14px;
+      }
+h6{
+  margin-top:5px;
+  font-size: 15px;
+}
+      .form-group {
+        margin: 10px;
+      }
+
+      .form-group input {
+        margin-top: -5px;
+        padding: 8px;
+        width: 95%;
+      }
+
+      .icon-container {
+        right: 5px;
+        bottom: 15px;
+        top:5px
+      }
+
+      .container button {
+        padding: 8px 30px;
+        margin-top: 50px;
+      }
+      .forgot-password{
+        margin-left: -30px;
+        margin-right: -95px;
+      }
+    }
+    
+
+    @media screen and (max-width: 768px) {
+      .container button {
+        padding: 10px 60px;
+      }
+    }
   </style>
 </head>
 
@@ -146,20 +189,14 @@
             Password?</a>
         </div>
       </div>
-
-
-
-
-
-
-    </form>
+ </form>
     <div class="container">
       <button onclick="signin()">Sign In</button>
       <!-- <button onclick="logIn()">Login</button> -->
     </div>
-    <h6 style="margin-bottom: -20px; margin-top: -5px; font-size: 15px; color:blue;">Don't have an account?<a
+    <h6  style="margin-bottom: -20px; margin-top: -5px; font-size: 15px; color:blue;">Don't have an account?<a
         href="./signup.html" style="color:blue;text-decoration: none;">Register</a>
-  </h4>
+  </h6>
 
 
   <!-- Add Firebase JavaScript SDK -->
@@ -279,6 +316,20 @@ const signin = () => {
         });
 
 }
+function togglePasswordVisibility() {
+      var passwordInput = document.getElementById("password");
+      var toggleIcon = document.getElementById("togglePassword");
+      
+      if (passwordInput.type === "password") {
+        passwordInput.type = "text";
+        toggleIcon.classList.remove("fa-eye");
+        toggleIcon.classList.add("fa-eye-slash");
+      } else {
+        passwordInput.type = "password";
+        toggleIcon.classList.remove("fa-eye-slash");
+        toggleIcon.classList.add("fa-eye");
+      }
+    }
   </script>
 </body>
 
