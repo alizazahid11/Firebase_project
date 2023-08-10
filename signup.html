@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <head>
 
   <title>Saylani Welfare signup</title>
@@ -10,9 +10,8 @@
     body {
       text-align: center;
       margin: 0;
-      /* Remove default body margin */
       padding: 0;
-      /* Remove default body padding */
+    
       text-align: center;
       margin: 20px;
     }
@@ -26,14 +25,13 @@
     h4 {
       color: rgb(9, 9, 196);
       line-height: 0;
-      /* Adjust line spacing for h2 */
       margin-top: -20px;
     }
 
 
     .form-group {
       position: relative;
-      margin: 70px;
+      margin: 50px;
     }
 
     .form-group input {
@@ -49,7 +47,7 @@
 
     .icon-container {
       position: absolute;
-      right: 420px;
+      right: 430px;
       bottom: 5px;
 
     }
@@ -106,7 +104,68 @@
 
     .container button:hover {
       background-color: darkgreen;
-      /* Darker green on hover */
+      
+    }
+    @media screen and (max-width: 480px) {
+      h1 {
+        font-size: 20px;
+      }
+
+      h4 {
+        font-size: 16px;
+        margin-top: -5px;
+      }
+
+      .container {
+        padding: 15px;
+        max-width: 100%;
+      }
+
+      .form-group input {
+        padding: 8px;
+        width: 95%;
+      }
+
+      .icon-container {
+        right: 15px;
+        bottom: 8px;
+      }
+
+      .sign-up-button {
+        font-size: 14px;
+        padding: 8px 16px;
+      }
+
+      .options-container {
+        margin-top: 5px;
+      }
+    }
+    @media screen and (max-width: 768px) {
+      h1 {
+        font-size: 22px;
+      }
+
+      h4 {
+        font-size: 18px;
+      }
+
+      .container {
+        padding: 20px;
+      }
+
+      .form-group input {
+        padding: 10px;
+      }
+
+      .icon-container {
+        right: 10px;
+        bottom: 10px;
+      }
+
+      .sign-up-button {
+        font-size: 16px;
+        padding: 10px 20px;
+      }
     }
   </style>
 </head>
@@ -263,7 +322,20 @@ let role = email.endsWith(adminIdentifier) ? 'Admin' : 'User';
             console.log(errorCode + ': ' + errorMessage);
         });
 }
-
+function togglePasswordVisibility() {
+      var passwordInput = document.getElementById("password");
+      var toggleIcon = document.getElementById("togglePassword");
+      
+      if (passwordInput.type === "password") {
+        passwordInput.type = "text";
+        toggleIcon.classList.remove("fa-eye");
+        toggleIcon.classList.add("fa-eye-slash");
+      } else {
+        passwordInput.type = "password";
+        toggleIcon.classList.remove("fa-eye-slash");
+        toggleIcon.classList.add("fa-eye");
+      }
+    }
   </script>
 </body>
 
