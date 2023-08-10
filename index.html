@@ -1,158 +1,81 @@
 <!DOCTYPE html>
-<html>
-
 <head>
-
-  <title>Saylani Welfare signup</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    body {
-      text-align: center;
-      margin: 0;
-      /* Remove default body margin */
-      padding: 0;
-      /* Remove default body padding */
-      text-align: center;
-      margin: 20px;
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    img{
+        margin-top:100px;
+        HEIGHT:200PX;
+        WIDTH:400PX;
+        margin-left:30px;
+        
     }
-
-    h1 {
-      color: rgb(29, 170, 29);
-      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-      line-height: 1.5;
+    H1{
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        COLOR:GREEN;
+        letter-spacing: 2PX;
     }
-
-    h4 {
-      color: rgb(9, 9, 196);
-      line-height: 0;
-      /* Adjust line spacing for h2 */
-      margin-top: -20px;
+    H3{
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        COLOR:rgb(34, 34, 163);
+        margin-top: -20PX;
     }
-
-
-    .form-group {
-      position: relative;
-      margin: 70px;
-    }
-
-    .form-group input {
-      width: 360px;
-      padding: -100px;
-      border: none;
-      border-bottom: 1px solid #ccc;
-      outline: none;
-      margin-top: -90px;
-
-
-    }
-
-    .icon-container {
-      position: absolute;
-      right: 420px;
-      bottom: 5px;
-
-    }
-
-    .icon-container i {
-      color: #999;
-    }
-
-    .sign-up-button {
+    .get-started-btn {
       background-color: green;
       color: white;
-      border: none;
       padding: 10px 20px;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-
-    .options-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-top: -70px;
-      padding: 20px;
-      padding-left: 30px;
-      margin-right: 20px
-    }
-
-    .options-container input[type="radio"] {
-      margin: 5px;
-    }
-
-    .container {
-      margin: 10px;
-    }
-
-    .container button {
-      background-color: green;
-     
-      color: white;
-     
-      padding: 10px 80px;
-      
       border: none;
-     
-      border-radius: 9px;
-      
+      border-radius: 5px;
+      font-size: 16px;
       cursor: pointer;
-    
-      font-size: 20px;
-      
-      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
       box-shadow: 0 6px 9px rgba(110, 109, 109, 0.3);
     }
 
-    .container button:hover {
-      background-color: darkgreen;
-      /* Darker green on hover */
+    
+    .get-started-btn:hover {
+      background-color: #063507; 
     }
-  </style>
-</head>
-
-<body>
-  <h1>SAYLANI WELFARE</h1>
-  <h4>ONLINE MARKET PLACE</h3>
-    <form>
-      <div class="form-group">
-        <input type="text" id="username" name="username" placeholder="User Name" required>
-        <div class="icon-container">
-          <i class="fas fa-user"></i>
-        </div>
-      </div>
-      <div class="form-group">
-        <input type="text" id="contact" name="contact" placeholder="Contact" required>
-        <div class="icon-container">
-          <i class="fas fa-phone"></i>
-        </div>
-      </div>
-      <div class="form-group">
-        <input type="email" id="email" name="email" placeholder="Email" required>
-        <div class="icon-container">
-          <i class="fas fa-envelope"></i>
-        </div>
-      </div>
-      <div class="form-group">
-        <input type="password" id="password" name="password" placeholder="Password" required>
-        <div class="icon-container">
-          <i class="fas fa-eye" id="togglePassword" onclick="togglePasswordVisibility()"></i>
-        </div>
-      </div>
      
+   
+    /* Media queries for responsiveness */
+    @media screen and (max-width: 768px) {
+        h1 {
+            font-size: 22px;
+        }
+        h3 {
+            font-size: 16px;
+        }
+        .get-started-btn {
+            font-size: 14px;
+            padding: 8px 16px;
+        }
+    }
 
-
-    </form>
-    <div class="container">
-      <button onclick="signup()">Sign Up</button>
-      <!-- <button onclick="logIn()">Login</button> -->
-    </div>
-    <h6 style="margin-bottom: -20px; margin-top: -5px; font-size: 15px; color:blue;">Already have an account?<a
-        href=salessignin.html style="color:blue;text-decoration: none;">Login</a>
-  </h4>
-
-
-
+    @media screen and (max-width: 480px) {
+        h1 {
+            font-size: 30px;
+            text-align: center;
+        }
+        h3 {
+            font-size: 20px;
+            text-align: center;
+        }
+        .get-started-btn {
+            font-size: 15px;
+            padding: 16px 18px;
+            margin-bottom:-400px;
+            text-align: center;
+        }
+        img {
+            max-width: 450px;
+            margin-left: -40px;
+            margin-right:-40px;
+            text-align: center;
+        
+        }
+    }
+</style>
+</head>
+<body>
   <!-- Add Firebase JavaScript SDK -->
   <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-auth.js"></script>
@@ -172,99 +95,11 @@
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
     // Initialize Realtime Database and get a reference to the service
-    const database = firebase.database();
+    const database = firebase.database();</script>
+<center><img src="Capture.PNG">
+<h1 >SAYLANI WELFARE</h1>
+<h3>ONLINE DISCOUNT STORE</h3>
+<button class="get-started-btn"><a href="./signup.html" style="color:white; text-decoration: none;">Get Started</a></button></center>
 
-    var signup = () => {
-    let username = document.getElementById('username').value;
-    let contact = document.getElementById('contact').value;
-    let email = document.getElementById('email').value;
-    let password = document.getElementById('password').value;
-    let role = 'User'
-
-    console.log(email, password)
-    firebase.auth().createUserWithEmailAndPassword(email, password)
-        .then((userCredential) => {
-            let user = userCredential.user;
-            firebase.database().ref('users/' + user.uid).set({
-                uid: user.uid,
-                username: username,
-                role: role,
-                contact: contact,
-                email: email,
-                password: password
-            })
-                .then(() => {
-                    const user = { email: email };
-                    localStorage.setItem('user', JSON.stringify(user));
-                    console.log('User created successfully.')
-                    window.location.href = 'file:///E:/SMIT%20project/homepage.html'
-                })
-                .catch((error) => {
-                    console.log(error);
-                })
-        })
-        .catch((error) => {
-            let errorCode = error.code;
-            let errorMessage = error.message;
-            console.log(errorCode + ': ' + errorMessage)
-        });
-}
-    
-  
-// // function isAuthenticated(){
-// //   const users=localStorage.getItem('user');
-// //   return users.email!=null;
-// // }
-// // if (!isAuthenticated){
-// //   window.location.href='../'//sign in html path 
-// // }
-// //signin signup p no protected
-var signup = () => {
-    let username = document.getElementById('username').value;
-    let contact = document.getElementById('contact').value;
-    let email = document.getElementById('email').value;
-    let password = document.getElementById('password').value;
-    
-    let adminIdentifier = '@admin.com';
-
-let role = email.endsWith(adminIdentifier) ? 'Admin' : 'User';
-
-
-    console.log(email, password);
-    
-    firebase.auth().createUserWithEmailAndPassword(email, password)
-        .then((userCredential) => {
-            let user = userCredential.user;
-            firebase.database().ref('users/' + user.uid).set({
-                uid: user.uid,
-                username: username,
-                role: role,
-                contact: contact,
-                email: email,
-                password: password
-            })
-            .then(() => {
-                const user = { email: email };
-                localStorage.setItem('user', JSON.stringify(user));
-                console.log('Admins id created successfully.');
-                if (role === 'Admin') {
-                    window.location.href = 'E:\SMIT project\salescategory.html';
-                } else {
-                    window.location.href = 'file:///E:/SMIT%20project/homepage.html';
-                }
-            })
-            .catch((error) => {
-                console.log(error);
-            });
-        })
-        .catch((error) => {
-            let errorCode = error.code;
-            let errorMessage = error.message;
-            console.log(errorCode + ': ' + errorMessage);
-        });
-}
-
-  </script>
 </body>
-
 </html>
