@@ -149,6 +149,7 @@
     .container button:hover {
       background-color: darkgreen; /* Darker green on hover */
     }
+   
   </style>  
 </head>
 
@@ -175,10 +176,48 @@
           </div>
     </div>
     <div>
-      <h1 style="margin-right: 500px;;">Orders</h1>
+      <h2 style="margin-right: 500px;;">Orders</h2>
+    </div>
+    <div class="order-list">
+      <!-- This is where the order details will be populated -->
     </div>
     <div class="container">
-      <a href="./start page.html" style="text-decoration: none; color:white;">   <button class="logout-button" >Logout</button></a>
+      <a href="./index.html" style="text-decoration: none; color:white;">   <button class="logout-button" >Logout</button></a>
      
   </div>
+  
+
+<script>
+  // Function to populate the order details
+  function populateOrderDetails(order) {
+    const orderList = document.querySelector(".order-list");
+
+    const orderDiv = document.createElement("div");
+    orderDiv.classList.add("order");
+
+    orderDiv.innerHTML = `
+      <h2>Username: ${order.name}</h2>
+      <p>Ordered at: ${order.orderedAt}</p>
+      <p>Quantity: ${order.quantity}</p>
+      <p>Total Amount: Rs${order.totalAmount.toFixed(2)}</p>
+    `;
+
+    orderList.appendChild(orderDiv);
+  }
+
+  // Get user's input data from browser storage or form
+  const name = localStorage.getItem("name");
+  const cartItems = JSON.parse(localStorage.getItem("cartItems"));
+
+  const order = {
+    name: name,
+    orderedAt: new Date().toLocaleString(),
+    quantity: cartItems.reduce((total, item) => total + item.qty, 0),
+    totalAmount: cartItems.reduce((total, item) => total + item.price, 0)
+  };
+
+  // Call the function to populate the order details
+  populateOrderDetails(order);
+</script>
+  
   </body>
