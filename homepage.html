@@ -206,6 +206,73 @@ color:green;
     .product:hover {
       background-color: #f1f1f1;
     }
+    /* Original CSS styles... */
+
+/* Media queries */
+@media (max-width: 480px) {
+  /* Move the nav bar to the bottom */
+  nav {
+    top: auto;
+    bottom: 0;
+  }
+  
+  /* Adjust the alignment of navbar items for mobile */
+  .navbar {
+    justify-content: space-around;
+    padding: 10px 0;
+    background-color: white;
+    
+  }
+  
+  .navbar li {
+    margin: 0 5px;
+  }
+  
+  /* Change icon color to grey */
+  .icons {
+    color: gray;
+  }
+  
+  
+
+  
+  .search-bar {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 20px;
+  }
+  
+  .search-bar i {
+    margin-left: auto;
+  }
+  .button-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Add gap between buttons */
+    padding: 10px;
+    overflow-x: auto; /* Enable horizontal scrolling if buttons exceed screen width */
+  }
+
+  .button {
+    padding: 5px;
+    border-radius: 10px;
+    width: 70px;
+  }
+
+  .button img {
+    width: 50px;
+    height: 40px;
+    object-fit: cover;
+  }
+
+  .button span {
+    margin-top: 5px;
+    font-size: 10px;
+  }
+  }
+
+
   </style>
 </head>
 <body>
