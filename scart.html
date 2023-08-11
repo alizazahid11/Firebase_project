@@ -258,10 +258,16 @@
       </div>
     </div>
 </form>
- <a href="./user settings.html"> <button type="submit" class="last-btn">Place Order</button></a>
+ <a href="./user settings.html"> <button type="submit" class="last-btn" onclick="placeOrder()">Place Order</button></a>
   </form>
 
   <script>
+    function placeOrder() {
+  const username = document.getElementById("name").value;
+  localStorage.setItem("username", username);
+  window.location.href = "file:///E:/SMIT%20project/user%20settings.html"; 
+}
+
     function renderCart() {
       const cartItems = JSON.parse(localStorage.getItem('cartItems') || '[]');
       const cartItemsContainer = document.getElementById('cartItems');
