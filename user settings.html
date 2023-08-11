@@ -104,11 +104,14 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      
+
     }
 
     .green-tick img {
       max-width: 60%;
       max-height: 60%;
+   
     }
   .form-group {
       position: relative;
@@ -169,7 +172,7 @@
       </div>
       <div class="form-group">
           <input type="email" id="email" name="email" placeholder="Update full name" required>
-          <div class="icon-container">
+          <div class="icon-container" style="margin-left: 35px;;">
               <svg xmlns="http://www.w3.org/2000/svg" width="30" height="20" fill="green" viewBox="0 0 24 24">
                   <path d="M0 11l2-2 5 5L18 3l2 2L7 18z"/>
               </svg>
@@ -185,7 +188,7 @@
       <a href="./index.html" style="text-decoration: none; color:white;">   <button class="logout-button" >Logout</button></a>
      
   </div>
-  
+
 
 <script>
   // Function to populate the order details
@@ -218,6 +221,12 @@
 
   // Call the function to populate the order details
   populateOrderDetails(order);
+  function clearCartAndKeepOrderDetails() {
+    localStorage.removeItem('cartItems');
+    renderCart(); // Clear cart details
+  }
 </script>
+
+
   
   </body>

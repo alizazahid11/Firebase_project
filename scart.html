@@ -258,15 +258,15 @@
       </div>
     </div>
 </form>
- <a href="./user settings.html"> <button type="submit" class="last-btn" onclick="placeOrder()">Place Order</button></a>
+ <a href="./user settings.html"> <button type="submit" class="last-btn" >Place Order</button></a>
   </form>
 
   <script>
-    function placeOrder() {
-  const username = document.getElementById("name").value;
-  localStorage.setItem("username", username);
-  window.location.href = "file:///E:/SMIT%20project/user%20settings.html"; 
-}
+// Assuming this code runs when the user submits the cart form
+const nameInput = document.getElementById("name");
+const name = nameInput.value;
+localStorage.setItem("name", name); // Store the name in local storage
+
 
     function renderCart() {
       const cartItems = JSON.parse(localStorage.getItem('cartItems') || '[]');
