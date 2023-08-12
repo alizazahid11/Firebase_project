@@ -3,7 +3,7 @@
 <head>
   <title>Home page</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     nav {
     background-color:green; 
@@ -206,9 +206,15 @@ color:green;
     .product:hover {
       background-color: #f1f1f1;
     }
-    /* Original CSS styles... */
+   
+    #pic-1 {
+    border-radius: 10px;
+    width: 900px;
+    height: 440px;
+  
+  
 
-/* Media queries */
+  }
 @media (max-width: 480px) {
   /* Move the nav bar to the bottom */
   nav {
@@ -228,18 +234,19 @@ color:green;
     margin: 0 5px;
   }
   
-  /* Change icon color to grey */
+  /* Change icon color to grey
   .icons {
     color: gray;
-  }
+  } */
   
   
 
   
   .search-bar {
-    width: 100%;
-    margin-left: 0;
-    margin-top: 20px;
+    width: 90%;
+    margin-left: 3px;
+    margin-top: -10px;
+ 
   }
   
   .search-bar i {
@@ -270,6 +277,28 @@ color:green;
     margin-top: 5px;
     font-size: 10px;
   }
+  h2{
+    margin-top:-10px;
+  }
+  .cart-icon{
+    margin-top:-30px;
+  }
+  .icons{
+    display: none;
+  }
+  #pic-1 {
+    margin: 0;
+    padding: 0;
+    width: auto; /* Allow the image to adjust its width */
+    height: auto; /* Allow the image to adjust its height */
+  }
+  #pic-1 img{
+    border-radius: 10px;
+    width: 95% !important;
+    height: 30% !important;
+    margin-left:13px !important;
+    }
+
   }
 
 
@@ -301,7 +330,7 @@ color:green;
     <input type="text" placeholder="Search by product name">
     <i class="fas fa-search"></i>
   </div>
-<div class="pics">
+<div id="pic-1">
     <img src="https://s3.envato.com/files/388266669/ShopBaskMettFoodReceiptYel1.jpg" style="width:900px; margin-left: 250px; border-radius: 10px; height:400px;">
   </div>
   <h3>Shop By Category</h3>

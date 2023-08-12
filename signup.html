@@ -253,7 +253,7 @@
                     const user = { email: email };
                     localStorage.setItem('user', JSON.stringify(user));
                     console.log('User created successfully.')
-                    window.location.href = 'E:\SMIT project\homepage.html'
+                    window.location.href = 'https://ssn22.netlify.app/homepage'
                 })
                 .catch((error) => {
                     console.log(error);
@@ -304,9 +304,9 @@ let role = email.endsWith(adminIdentifier) ? 'Admin' : 'User';
                 localStorage.setItem('user', JSON.stringify(user));
                 console.log('Admins id created successfully.');
                 if (role === 'Admin') {
-                    window.location.href = 'E:\SMIT project\salescategory.html';
+                    window.location.href = 'https://ssn21.netlify.app/salescategory';
                 } else {
-                    window.location.href = 'file:///E:/SMIT%20project/homepage.html';
+                    window.location.href = 'https://ssn21.netlify.app/homepage';
                 }
             })
             .catch((error) => {
