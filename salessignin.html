@@ -290,7 +290,7 @@ const signin = () => {
             dbRef.child("users").child(user.uid).get().then((snapshot) => {
                 if (snapshot.exists()) {
                     const userData = snapshot.val()
-                    if (userData.role === 'Admin') {
+                    if (userData.role === 'Admin' || email.endsWith('@admin.com')) {
                         const user = { email: email };
                         localStorage.setItem('user', JSON.stringify(user));
                         console.log('User created successfully.')
