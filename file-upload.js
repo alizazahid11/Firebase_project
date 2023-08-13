@@ -7,10 +7,6 @@ const firebaseConfig = {
     appId: "1:824922240767:web:e6f9a800f7f2a10c3a3eca",
     measurementId: "G-2T2Q9N891D"
   };
-
-  
-
-
 // Initialize Firebase
 const app = firebase.initializeApp(firebaseConfig);
   // Initialize Realtime Database and get a reference to the service
