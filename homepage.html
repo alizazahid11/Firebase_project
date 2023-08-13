@@ -766,18 +766,6 @@ nav {
   <script src="./signup.html"></script>
   <script src="./salessignin.html"></script>
   <script src="./protected.js"></script>
-  <script>
-    // Function to check if the user is authenticated
-    function isAuthenticated() {
-        const user = localStorage.getItem('user');
-        return user !== null;
-    }
 
-    // Check if the user is authenticated
-    if (!isAuthenticated()) {
-        alert("You need to sign up or sign in to access this page.");
-        window.location.href = 'file:///E:/SMIT%20project/signup.html';
-    }
-</script>
   </body>
   </html>

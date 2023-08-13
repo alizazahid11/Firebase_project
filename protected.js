@@ -1,13 +1,15 @@
 function isAuthenticated() {
-    const user = localStorage.getItem('user');
+    const user = sessionStorage.getItem('user');
     return user !== null;
 }
 
 // Check if the user is authenticated
 if (!isAuthenticated()) {
-    window.location.href = 'http:///E:/SMIT%20project/salessignin.html' ;
+    window.location.href = './salessignin.html' ;
 }
 
 const logout = () => {
-    localStorage.removeItem('user');
+    sessionStorage.removeItem('user');
+    console.log()
+    window.location.href=''
 }

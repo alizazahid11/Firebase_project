@@ -3,10 +3,8 @@
 <head>
   <title>Navigation Bar</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-auth.js"></script>
 
-  <script src="./file-upload.js"></script>
+ 
   <style>
     nav {
     background-color:green; 
@@ -107,11 +105,11 @@ margin-left:55px;
     .photo-container {
       position: relative;
       text-align: center;
+    
     }
 
     .photo-container img {
-      width: 200px;
-      height: 200px;
+    
       border-radius: 50%;
       border: 2px solid #ccc;
     }
@@ -274,13 +272,13 @@ margin-left:55px;
 </head>
 <body>
   <h1 style="margin-left: -200px; margin-bottom: 30px; color:rgb(17, 17, 154);">Add New Item</h1>
-  <form>
+  <form >
 
     <div class="form-group file-container">
       
-        <div class="file-input">
-            <i class="camera-icon fas fa-camera"></i>
-          <input type="file" id="photo" accept="image/*" capture="camera" name="photo">
+        <div class="file-input" style="height:60px;">
+            <i class="camera-icon fas fa-camera" style="height:10px; width:5px; margin-top: -17px;"></i>
+          <input type="file" id="photo" accept="image/*" capture="camera" name="photo"  >
         </div>
       </div>
       <br><br>
@@ -316,21 +314,30 @@ margin-left:55px;
         <label for="unit-price">Unit Price:</label>
     <input type="number" id="unit-price" name="unit-price" required placeholder="Unit price" id="up" style="height:30px;"></div>
     <br><br>
+    <div class="input-container" >
+      <label for="unit-price">Quantity:</label>
+  <input type="number" id="Quantity" name="unit-price" required placeholder="Quantity" id="up" style="height:30px;"></div>
+  <br><br>
    <center> <div class="form-group">
-    <input type="submit" value="Add Product"></div></center>
+    <input type="submit" value="Add Product" onclick="addproduct()"></div></center>
   </form>
   
-  <script>
-    // Handle file input change event
-    const fileInput = document.getElementById('photo'); // Correctly select the file input by its ID
-    fileInput.addEventListener('change', (event) => {
-        const file = event.target.files[0];
-        if (file) {
-            fileUpload(file); // Call the fileUpload function to start the upload process
-        }
-    });
-</script>
 
+  <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-database.js"></script>
+  <script type="text/javascript">
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyApMbd9Sncf9LWCqPLWS6Vj1Bm7beaOKF4",
+      authDomain: "smit-project-751b0.firebaseapp.com",
+      projectId: "smit-project-751b0",
+      storageBucket: "smit-project-751b0.appspot.com",
+      messagingSenderId: "824922240767",
+      appId: "1:824922240767:web:e6f9a800f7f2a10c3a3eca",
+      measurementId: "G-2T2Q9N891D"
+    };</script>
+    <script src="./product.js"></script>
+    <script src="./protected.js"></script>
 </body>
 </html>
  

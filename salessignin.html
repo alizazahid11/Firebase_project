@@ -290,16 +290,16 @@ const signin = () => {
             dbRef.child("users").child(user.uid).get().then((snapshot) => {
                 if (snapshot.exists()) {
                     const userData = snapshot.val()
-                    if (userData.role === 'Admin' || email.endsWith('@admin.com')) {
+                    if (userData.role === 'Admin') {
                         const user = { email: email };
-                        localStorage.setItem('user', JSON.stringify(user));
+                        sessionStorage.setItem('user', JSON.stringify(user));
                         console.log('User created successfully.')
-                        window.location.href = 'file:///E:/SMIT%20project/salescategory.html'
+                        window.location.href = './salescategory.html'
                     }
                     else {
                         const user = { email: email };
-                        localStorage.setItem('user', JSON.stringify(user));
-                        window.location.href = 'file:///E:/SMIT%20project/homepage.html'
+                        sessionStorage.setItem('user', JSON.stringify(user));
+                        window.location.href = './homepage.html'
                     }
                 } else {
                     console.log("No data available");

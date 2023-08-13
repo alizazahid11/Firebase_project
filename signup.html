@@ -230,7 +230,7 @@
     // Initialize Realtime Database and get a reference to the service
     const database = firebase.database();
 
-    var signup = () => {
+    const signup = () => {
     let username = document.getElementById('username').value;
     let contact = document.getElementById('contact').value;
     let email = document.getElementById('email').value;
@@ -251,9 +251,9 @@
             })
                 .then(() => {
                     const user = { email: email };
-                    localStorage.setItem('user', JSON.stringify(user));
+                    sessionStorage.setItem('user', JSON.stringify(user));
                     console.log('User created successfully.')
-                    window.location.href = 'E:\SMIT project\homepage.html'
+                    window.location.href = './homepage.html'
                 })
                 .catch((error) => {
                     console.log(error);
@@ -275,50 +275,50 @@
 // //   window.location.href='../'//sign in html path 
 // // }
 // //signin signup p no protected
-var signup = () => {
-    let username = document.getElementById('username').value;
-    let contact = document.getElementById('contact').value;
-    let email = document.getElementById('email').value;
-    let password = document.getElementById('password').value;
+// var signup = () => {
+//     let username = document.getElementById('username').value;
+//     let contact = document.getElementById('contact').value;
+//     let email = document.getElementById('email').value;
+//     let password = document.getElementById('password').value;
     
-    let adminIdentifier = '@admin.com';
+//     let adminIdentifier = '@admin.com';
 
-let role = email.endsWith(adminIdentifier) ? 'Admin' : 'User';
+// let role = email.endsWith(adminIdentifier) ? 'Admin' : 'User';
 
 
-    console.log(email, password);
+//     console.log(email, password);
     
-    firebase.auth().createUserWithEmailAndPassword(email, password)
-        .then((userCredential) => {
-            let user = userCredential.user;
-            firebase.database().ref('users/' + user.uid).set({
-                uid: user.uid,
-                username: username,
-                role: role,
-                contact: contact,
-                email: email,
-                password: password
-            })
-            .then(() => {
-                const user = { email: email };
-                localStorage.setItem('user', JSON.stringify(user));
-                console.log('Admins id created successfully.');
-                if (role === 'Admin') {
-                    window.location.href = 'file:///E:/SMIT%20project/salescategory.html';
-                } else {
-                    window.location.href = 'E:\SMIT project\homepage.html';
-                }
-            })
-            .catch((error) => {
-                console.log(error);
-            });
-        })
-        .catch((error) => {
-            let errorCode = error.code;
-            let errorMessage = error.message;
-            console.log(errorCode + ': ' + errorMessage);
-        });
-}
+//     firebase.auth().createUserWithEmailAndPassword(email, password)
+//         .then((userCredential) => {
+//             let user = userCredential.user;
+//             firebase.database().ref('users/' + user.uid).set({
+//                 uid: user.uid,
+//                 username: username,
+//                 role: role,
+//                 contact: contact,
+//                 email: email,
+//                 password: password
+//             })
+//             .then(() => {
+//                 const user = { email: email };
+//                 localStorage.setItem('user', JSON.stringify(user));
+//                 console.log('Admins id created successfully.');
+//                 if (role === 'Admin') {
+//                     window.location.href = 'file:///E:/SMIT%20project/salescategory.html';
+//                 } else {
+//                     window.location.href = 'E:\SMIT project\homepage.html';
+//                 }
+//             })
+//             .catch((error) => {
+//                 console.log(error);
+//             });
+//         })
+//         .catch((error) => {
+//             let errorCode = error.code;
+//             let errorMessage = error.message;
+//             console.log(errorCode + ': ' + errorMessage);
+//         });
+// }
 function togglePasswordVisibility() {
       var passwordInput = document.getElementById("password");
       var toggleIcon = document.getElementById("togglePassword");
