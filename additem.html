@@ -67,7 +67,7 @@ text-align: center;
 margin-right: 1400px;
 font-size:20px;
 margin-top:-85px;
-margin-left:55px;
+margin-left:110px;
 
   }
 
@@ -80,7 +80,7 @@ margin-left:55px;
    margin-right: 1400px;
    margin-top: -60px;
    font-size:20px;
-   margin-left:55px;
+   margin-left:110px;
   }
   div img{
     margin-top:70px;
@@ -217,7 +217,7 @@ margin-left:55px;
       border-radius: 10px;
       background-color:rgb(191, 187, 187); /* Set the background color to grey */
    color:rgb(117, 117, 117);
-   height:120px; 
+   height:80px; 
     }
      label {
       display: block;
@@ -246,6 +246,22 @@ margin-left:55px;
     .input-container  #unit-price{
         height: 40px;
     }
+    .order-icon {
+  display: inline-block;
+  padding: 10px;
+  border: 1px solid #000; /* Adjust border color and width as needed */
+  border-radius: 3px;
+  margin-left: 1100px;
+  cursor: pointer;
+  margin-top: -80px !important;
+  
+}
+.order-icon:hover{
+    background-color: lightgreen;
+}
+.order-icon:active{
+    background-color: lightgreen ;
+}
 
   </style>
   </head>
@@ -262,12 +278,15 @@ margin-left:55px;
           </div>
       </nav>
       <div>
-        <img src="https://cdn-icons-png.flaticon.com/512/4128/4128176.png" height="50" width="50"></div>
-     <h4>Mr.Ahmed</h4>
+        <img src="https://cdn-icons-png.flaticon.com/512/4128/4128176.png" height="50" width="50" style="margin-left: 50px; ">
+        <div class="order-icon">
+          <a href="./admin order.html" style="text-decoration: none; color:black"> <i class="fas fa-list-ul" > </a></i>
+        </div></div>
+        <h4>Mr.Ahmed</h4>
     <h5>Sales</h5>
    
 
-  <h1 style="margin-left: -200px; margin-bottom: 30px; color:rgb(17, 17, 154);">Add New Item</h1>
+  <h1 style="margin-left: -200px; margin-bottom: 30px; color:rgb(17, 17, 154); margin-top: -90px;">Add New Item</h1>
   <form >
 
     <div class="form-group file-container">
@@ -278,12 +297,12 @@ margin-left:55px;
         </div>
       </div>
       <br><br>
-      <div class="form-group" style="width:430px; border-radius: 90px; ">
+      <div class="form-group" style="width:430px; border-radius: 90px; margin-top: -40px; ">
     <input type="text" id="item-name" name="item-name" required placeholder=" item name">
 </div>
     <br><br>
 
-    <div class="form-group" style="width:450px; ">
+    <div class="form-group" style="width:450px; margin-top: -40px; ">
     <select id="category" name="category" required >
       <option value="" >Select a category</option>
       <option value="electronics">Groceries</option>
@@ -295,26 +314,26 @@ margin-left:55px;
     </select>
 </div>
     <br><br>
-    <div class="form-group">
+    <div class="form-group" style="margin-top:  -40px;">
    
     <textarea id="description" name="description" rows="4" required placeholder="Description"></textarea>
 </div>
     <br><br>
     
-    <div class="input-container" >
+    <div class="input-container" style="margin-top: -30px; margin-right: 10px;">
         <label for="unit-price">Unit Name:</label>
     <input type="text" id="unit-name" name="unit-price" required placeholder="Kg/dozen/gm" id="up" style="height:20px;  border: 1px solid #7b7676; "></div> 
         
     <br><br>
-    <div class="input-container" >
+    <div class="input-container"style="margin-top:  -20px; margin-right:10px;" >
         <label for="unit-price">Unit Price:</label>
     <input type="number" id="unit-price" name="unit-price" required placeholder="Unit price" id="up" style="height:30px;"></div>
     <br><br>
-    <div class="input-container" >
+    <div class="input-container" style="margin-top:  -20px; margin-right: 10px; ">
       <label for="unit-price">Quantity:</label>
   <input type="number" id="Quantity" name="unit-price" required placeholder="Quantity" id="up" style="height:30px;"></div>
   <br><br>
-   <center> <div class="form-group">
+   <center> <div class="form-group" style="margin-top: -60px;">
     <input type="submit" value="Add Product" onclick="addproduct()"></div></center>
   </form>
   

@@ -4,10 +4,14 @@
   <title>orders</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <style>
+    
      .order {
       margin-top: 200px;
      
       padding: 10px;
+      align-content: center;
+      align-items: center;
+      justify-content: center;
       
     }
 
@@ -107,18 +111,60 @@
   h2{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color:rgb(64, 64, 141);
-    margin-top: 80px !important;
+    margin-top: -40px !important;
     margin-left: 490px;;
     margin-bottom: -120px;
   }
+  h4 {
+    color: rgb(9, 9, 196);
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+line-height: 4.5;
+text-align: center;
+margin-right: 1400px;
+font-size:20px;
+margin-top:-85px;
+margin-left:70px;
+
+  }
+
+  h5 {
+    color: rgb(29, 170, 29);
+   line-height: -1; /* Adjust line spacing for h2 */
+   margin-top:-80px;
+   margin-left:3px;
+   text-align: center;
+   margin-right: 1400px;
+   margin-top: -60px;
+   font-size:20px;
+   margin-left:70px;
+  }
+  .order-icon {
+  display: inline-block;
+  padding: 10px;
+  border: 1px solid #000; /* Adjust border color and width as needed */
+  border-radius: 3px;
+  margin-left: 1200px;
+  cursor: pointer;
+  
+}
+.order-icon:hover{
+    background-color: lightgreen;
+}
+.order-icon:active{
+    background-color: lightgreen ;
+}
+
     </style>
     <body>
         <div>
-            <img src="https://cdn-icons-png.flaticon.com/512/4128/4128176.png" height="50" width="50"></div>
-         <h4>Mr.Ahmed</h4>
+            <img src="https://cdn-icons-png.flaticon.com/512/4128/4128176.png" height="50" width="50" style="margin-left:20px;"> 
+            <div class="order-icon">
+                <a href="./admin order.html" style="text-decoration: none; color:black">  <i class="fas fa-list-ul" > </a></i>
+              </div></div>
+            <h4>Mr.Ahmed</h4>
         <h5>Sales</h5>
         <div>
-            <h2 style="margin-right: 380px;; margin-top:300px;">Orders</h2>
+            <h2 style="margin-right: 300px;; margin-top:-100px;">Orders</h2>
           </div>
         </div>
       
@@ -168,12 +214,12 @@
               <div class="item" style="margin-top:-130px;margin-left:550px; color:grey ">2x Item Name</div>
               <div class="item"style="margin-left:550px; color:grey; margin-bottom:30px;">3x Item Name</div>
             </div>
-            <div class="total" style="margin-top:-70px; margin-bottom: -400px;">
+            <div class="total" style="margin-top:-80px; ">
               <div >Total:</div>
               <div class="total-amount" >Rs900.00</div>
             </div>
           </div>
-          <div class="custom-dropdown" style="margin-top: -500px; margin-bottom: -600px;">
+          <div class="custom-dropdown" style="margin-top: -900px; margin-bottom: -600px;">
             <select>
               <option value="" disabled selected hidden>Change Status</option>
               <option value="status1">Status 1</option>
