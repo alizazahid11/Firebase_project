@@ -281,7 +281,7 @@ var signup = () => {
     let email = document.getElementById('email').value;
     let password = document.getElementById('password').value;
     
-    let adminIdentifier = '@admin.com';
+    let adminIdentifier = '@saylani.com';
 
 let role = email.endsWith(adminIdentifier) ? 'Admin' : 'User';
 
@@ -304,9 +304,9 @@ let role = email.endsWith(adminIdentifier) ? 'Admin' : 'User';
                 localStorage.setItem('user', JSON.stringify(user));
                 console.log('Admins id created successfully.');
                 if (role === 'Admin') {
-                    window.location.href = 'file:///E:/SMIT%20project/salescategory.html';
+                    window.location.href = './salescategory.html';
                 } else {
-                    window.location.href = 'E:\SMIT project\homepage.html';
+                    window.location.href = './homepage.html';
                 }
             })
             .catch((error) => {

@@ -11,5 +11,5 @@ if (!isAuthenticated()) {
 const logout = () => {
     sessionStorage.removeItem('user');
     console.log()
-    window.location.href=''
+    window.location.href='./index.html'
 }
