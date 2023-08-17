@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>orders</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+     .order {
+      margin-top: 200px;
+     
+      padding: 10px;
+      
+    }
+
+    .order-header {
+      display: flex;
+      
+      align-items: center;
+    }
+
+    .order-details {
+      display: flex;
+      flex-direction: column;
+      margin-top: 10px;
+    }
+
+    .order-items {
+      margin-top: 10px;
+    }
+
+    .item {
+      display: flex;
+     
+      align-items: center;
+    
+    }
+
+    .total {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: -10px;
+      font-weight: bold;
+      margin-left:550px;
+      margin-bottom:-80px;
+    }
+
+    .total-amount {
+      color: green;
+      margin-right:405px;
+   
+    }
+    #line{
+    box-shadow:  0 8px 9px rgba(110, 109, 109, 0.3);;
+
+   
+  }
+  .form-groop {
+      position: relative;
+  margin:30px;
+      margin-left: 550px;;
+    }
+
+    .form-groop input {
+      width: 360px;
+      padding: -100px;
+      border: none;
+      border-bottom: 1px solid #ccc;
+      outline: none;
+      margin-top:-30px;
+      
+    
+    }
+    .custom-dropdown {
+    position: relative;
+    display: inline-block;
+    border: 1px solid lightgrey;
+    border-radius: 20px;
+    padding: 8px;
+    width:350px;
+    background-color: rgb(163, 159, 159);
+    margin-left: 550px;;
+    margin-top: -90px ;
+  }
+  
+  .custom-dropdown select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: none;
+    outline: none;
+    background: transparent;
+    width: 100%;
+    padding: 0;
+    font-size: 14px;
+    color: rgb(74, 72, 72);
+   
+  }
+  .custom-dropdown::after {
+    content: '\25BE'; /* Unicode down arrow icon */
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    color: rgb(57, 55, 55);
+    width:30px;
+  }
+  h2{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color:rgb(64, 64, 141);
+    margin-top: 80px !important;
+    margin-left: 490px;;
+    margin-bottom: -120px;
+  }
+    </style>
+    <body>
+        <div>
+            <img src="https://cdn-icons-png.flaticon.com/512/4128/4128176.png" height="50" width="50"></div>
+         <h4>Mr.Ahmed</h4>
+        <h5>Sales</h5>
+        <div>
+            <h2 style="margin-right: 380px;; margin-top:300px;">Orders</h2>
+          </div>
+        </div>
+      
+          
+        <div class="order">
+          <div class="order-header">
+            <div style="margin-left:550px; margin-top:-150px;"><b>Aliza Zahid</b></div>
+            <div style="margin-left: -80px; font-size: 12px;margin-top:-130px;"><br>Just Now - Pending</div>
+            <div style="margin-left:200px;margin-top:-120px;font-size: 12px; "> 08483791201</div>
+          </div>
+          <div class="order-details">
+            <div class="order-items">
+              <div class="item" style="margin-top:-60px;margin-left:550px; color:grey">2x Item Name</div>
+              <div class="item"style="margin-left:550px; color:grey">3x Item Name</div>
+            </div>
+            <div class="total">
+              <div >Total:</div>
+              <div class="total-amount">Rs500.00</div>
+            </div>
+          </div>
+          <div class="custom-dropdown" style="margin-top: 25px;">
+            <select>
+              <option value="" disabled selected hidden>Change Status</option>
+              <option value="status1">Status 1</option>
+              <option value="status2">Status 2</option>
+              <option value="status3">Status 3</option>
+            </select>
+          </div>
+      
+        <form>
+          <div class="form-groop" style="margin-bottom: -30px;">
+            <input type="text" id="line" name="line" placeholder="" required >
+            <div class="icon-container">
+        
+            </div>
+          </div>
+        </form>  </div>
+        
+        <div class="order" >
+          <div class="order-header">
+            <div style="margin-left:550px; margin-top: -300px;"><b>Aliza Zahid</b></div>
+            <div style="margin-left: -80px; font-size: 12px;margin-top:-280px"><br>Just Now - Pending</div>
+            <div style="margin-left:200px;margin-top:-255px;font-size: 12px; "> 08483791201</div>
+          </div>
+          <div class="order-details">
+            <div class="order-items">
+              <div class="item" style="margin-top:-130px;margin-left:550px; color:grey ">2x Item Name</div>
+              <div class="item"style="margin-left:550px; color:grey; margin-bottom:30px;">3x Item Name</div>
+            </div>
+            <div class="total" style="margin-top:-70px; margin-bottom: -400px;">
+              <div >Total:</div>
+              <div class="total-amount" >Rs900.00</div>
+            </div>
+          </div>
+          <div class="custom-dropdown" style="margin-top: -500px; margin-bottom: -600px;">
+            <select>
+              <option value="" disabled selected hidden>Change Status</option>
+              <option value="status1">Status 1</option>
+              <option value="status2">Status 2</option>
+              <option value="status3">Status 3</option>
+            </select>
+          </div>
+          <form>
+            <div class="form-groop" >
+              <input type="text" id="line" name="line" placeholder="" required >
+              <div class="icon-container">
+          
+              </div>
+            </div>
+          </form>  </div>
+      
+
+
+ 
