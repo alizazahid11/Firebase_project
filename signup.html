@@ -230,17 +230,106 @@
     // Initialize Realtime Database and get a reference to the service
     const database = firebase.database();
 
-    var signup = () => {
+//     var signup = () => {
+//     let username = document.getElementById('username').value;
+//     let contact = document.getElementById('contact').value;
+//     let email = document.getElementById('email').value;
+//     let password = document.getElementById('password').value;
+//     let role = 'User'
+
+//     console.log(email, password)
+//     firebase.auth().createUserWithEmailAndPassword(email, password)
+//         .then((userCredential) => {
+//             let user = userCredential.user;
+//             firebase.database().ref('users/' + user.uid).set({
+//                 uid: user.uid,
+//                 username: username,
+//                 role: role,
+//                 contact: contact,
+//                 email: email,
+//                 password: password
+//             })
+//                 .then(() => {
+//                     const user = { email: email };
+//                     sessionStorage.setItem('user', JSON.stringify(user));
+//                     console.log('User created successfully.')
+//                     window.location.href = './homepage.html'
+//                 })
+//                 .catch((error) => {
+//                     console.log(error);
+//                 })
+//         })
+//         .catch((error) => {
+//             let errorCode = error.code;
+//             let errorMessage = error.message;
+//             console.log(errorCode + ': ' + errorMessage)
+//         });
+// }
+    
+  
+// // function isAuthenticated(){
+// //   const users=localStorage.getItem('user');
+// //   return users.email!=null;
+// // }
+// // if (!isAuthenticated){
+// //   window.location.href='../'//sign in html path 
+// // }
+// //signin signup p no protected
+// var signup = () => {
+//     let username = document.getElementById('username').value;
+//     let contact = document.getElementById('contact').value;
+//     let email = document.getElementById('email').value;
+//     let password = document.getElementById('password').value;
+    
+//     let adminIdentifier = '@saylani.com';
+
+// let role = email.endsWith(adminIdentifier) ? 'Admin' : 'User';
+
+
+//     console.log(email, password);
+    
+//     firebase.auth().createUserWithEmailAndPassword(email, password)
+//         .then((userCredential) => {
+//             let user = userCredential.user;
+//             firebase.database().ref('admin/' + user.uid).set({
+//                 uid: user.uid,
+//                 username: username,
+//                 role: role,
+//                 contact: contact,
+//                 email: email,
+//                 password: password
+//             })
+//             .then(() => {
+//                 const admin = { email: email };
+//                 localStorage.setItem('admin', JSON.stringify(admin));
+//                 console.log('Admins id created successfully.');
+//                 if (role === 'Admin') {
+//                     window.location.href = './salescategory.html';
+//                 }
+//             })
+//             .catch((error) => {
+//                 console.log(error);
+//             });
+//         })
+//         .catch((error) => {
+//             let errorCode = error.code;
+//             let errorMessage = error.message;
+//             console.log(errorCode + ': ' + errorMessage);
+//         });
+// }
+var signup = () => {
     let username = document.getElementById('username').value;
     let contact = document.getElementById('contact').value;
     let email = document.getElementById('email').value;
     let password = document.getElementById('password').value;
-    let role = 'User'
+    let role = 'User';
 
-    console.log(email, password)
+    console.log(email, password);
     firebase.auth().createUserWithEmailAndPassword(email, password)
         .then((userCredential) => {
             let user = userCredential.user;
+            let domain = email.split('@')[1]; // Extracting domain from email
+
             firebase.database().ref('users/' + user.uid).set({
                 uid: user.uid,
                 username: username,
@@ -252,73 +341,28 @@
                 .then(() => {
                     const user = { email: email };
                     sessionStorage.setItem('user', JSON.stringify(user));
-                    console.log('User created successfully.')
-                    window.location.href = './homepage.html'
+                 
+
+                    if (domain === 'saylani.com') {
+                      console.log('admin created successfully.');
+                        window.location.href = './salescategory.html';
+                    } else {
+                        // Redirect to homepage
+                        console.log('User created successfully.');   
+                        window.location.href = './homepage.html';
+                    }
                 })
                 .catch((error) => {
                     console.log(error);
-                })
-        })
-        .catch((error) => {
-            let errorCode = error.code;
-            let errorMessage = error.message;
-            console.log(errorCode + ': ' + errorMessage)
-        });
-}
-    
-  
-// // function isAuthenticated(){
-// //   const users=localStorage.getItem('user');
-// //   return users.email!=null;
-// // }
-// // if (!isAuthenticated){
-// //   window.location.href='../'//sign in html path 
-// // }
-// //signin signup p no protected
-var signup = () => {
-    let username = document.getElementById('username').value;
-    let contact = document.getElementById('contact').value;
-    let email = document.getElementById('email').value;
-    let password = document.getElementById('password').value;
-    
-    let adminIdentifier = '@saylani.com';
-
-let role = email.endsWith(adminIdentifier) ? 'Admin' : 'User';
-
-
-    console.log(email, password);
-    
-    firebase.auth().createUserWithEmailAndPassword(email, password)
-        .then((userCredential) => {
-            let user = userCredential.user;
-            firebase.database().ref('users/' + user.uid).set({
-                uid: user.uid,
-                username: username,
-                role: role,
-                contact: contact,
-                email: email,
-                password: password
-            })
-            .then(() => {
-                const user = { email: email };
-                localStorage.setItem('user', JSON.stringify(user));
-                console.log('Admins id created successfully.');
-                if (role === 'Admin') {
-                    window.location.href = './salescategory.html';
-                } else {
-                    window.location.href = './homepage.html';
-                }
-            })
-            .catch((error) => {
-                console.log(error);
-            });
+                });
         })
         .catch((error) => {
             let errorCode = error.code;
             let errorMessage = error.message;
             console.log(errorCode + ': ' + errorMessage);
         });
-}
+};
+
 function togglePasswordVisibility() {
       var passwordInput = document.getElementById("password");
       var toggleIcon = document.getElementById("togglePassword");
