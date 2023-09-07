@@ -3,11 +3,9 @@
 <head>
   <title>add item</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-database.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-storage.js"></script>
-      
-    <script src="./protected.js"></script>
+
+<!--       
+    <script src="./protected.js"></script> -->
   
   <script src="./product.js"></script>
  
@@ -339,16 +337,18 @@ margin-left:110px;
     <div class="input-container" style="margin-top:  -20px; margin-right: 10px; ">
       <label for="unit-price">Quantity:</label>
   <input type="number" id="Quantity" name="unit-price" required placeholder="Quantity" id="up" style="height:30px;"></div>
+    
   <br><br>
    <center> <div class="form-group" style="margin-top: -60px;">
     <input type="submit" value="Add Product" onclick="addproduct()"></div></center>
-  </form>
-  
-
-  
-
-
-</body>
-</html>
- 
+  </div> </form>
+  <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-storage.js"></script>
+  <script src="firebaseConfig.js"></script>
+<script src="./addproduct.js"></script>
   </body>
+</html>
