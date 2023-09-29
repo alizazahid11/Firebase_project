@@ -2,8 +2,14 @@
 <html>
 <head>
   <title>orders</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  <style>
+ <style>
+   body, html {
+  margin: 0;
+  padding: 0;
+}
     nav {
     background-color:green; 
     height: 50px; 
@@ -155,8 +161,9 @@
     }
     .order {
       margin-top: 20px;
-   
+   margin-left: -70px;
       padding: 10px;
+      margin-right: -80px;
     }
 
     .order-header {
@@ -218,7 +225,218 @@
       
     
     }
+  /* Styles for tablets */
+@media (max-width: 768px) {
+  nav {
+  background-color: white; 
+ overflow: hidden; 
+    top: auto;
+    bottom: 0;
+    margin-left: 190px;
+   
+
+
+}
+
+.navbar {
+  list-style-type: none;
+ 
+  justify-content: space-between;
+    padding: 60px 0;
+}
+
+.navbar li {
   
+  margin: 0 5px;
+}
+
+.navbar a {
+  color: grey; 
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+}
+
+
+.navbar a:hover i {
+  color: darkgrey;
+}
+
+
+.navbar a:hover {
+  background-color: #f1f1f1;
+}}
+
+@media (max-width: 480px) {
+  nav {
+  background-color: white; 
+ overflow: hidden; 
+    top: auto;
+    bottom: 0;
+    margin-left: 50px;
+
+}
+
+.navbar {
+  list-style-type: none;
+ 
+  justify-content: space-between;
+    padding: 10px 0;
+}
+
+.navbar li {
+  
+  margin: 0 5px;
+}
+
+.navbar a {
+  color: grey; 
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+}
+
+
+.navbar a:hover i {
+  color: darkgrey;
+}
+
+
+.navbar a:hover {
+  background-color: #f1f1f1;
+}}
+@media (max-width: 768px) {
+  .form-group {
+    margin: 10px; /* Reduce the margin for tablets */
+  }
+  
+  .form-group input {
+    margin-top: 5px; /* Adjust the margin for tablets */
+  }
+}
+
+/* Media queries for mobiles */
+@media (max-width: 480px) {
+  .form-group {
+    margin: 5px; /* Reduce the margin for mobiles */
+  }
+  
+  .form-group input {
+    margin-top: 5px; /* Adjust the margin for mobiles */
+  }
+}
+
+/* Media queries for tablets */
+@media (max-width: 768px) {
+  .icon-container {
+    right: 10px; /* Adjust positioning for tablets */
+    margin-right: 170px; /* Adjust margin for tablets */
+  }
+}
+
+
+@media (max-width: 480px) {
+  .icon-container {
+    right: 40px; 
+    bottom: -12px; 
+    margin: 10px 0; 
+    text-align: center; 
+  }
+  .order-hea h2{
+   bottom: 350px;
+  }
+  .icon-container i {
+    display: block;
+    margin: 5px 0; 
+  }
+}
+
+/* Media queries for tablets */
+@media (max-width: 768px) {
+  .order {
+    margin-left: -30px; /* Adjust margin for tablets */
+    margin-right: -40px; /* Adjust margin for tablets */
+  }
+  body{
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+  .total {
+    margin-left: 20px; /* Adjust margin for tablets */
+    margin-right: 20px; /* Adjust margin for tablets */
+  }
+
+  .form-groop {
+    margin-left: 20px; /* Adjust margin for tablets */
+  }
+
+  .order-header {
+    font-size: 18px; /* Adjust font size for tablets */
+  }
+
+  .order-details {
+    font-size: 14px; /* Adjust font size for tablets */
+  }
+}
+
+/* Media queries for mobiles */
+@media (max-width: 480px) {
+  .order {
+    margin-left: -530px; /* Adjust margin for mobiles */
+    margin-right: -290px; /* Adjust margin for mobiles */
+    margin-top: 50px;
+    font-size: 12px;
+   
+  }
+body{
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+  .total {
+    margin-left: 730px; 
+    margin-right: 10px; 
+    font-size: 13px;
+    margin-top: -50px;
+  }
+
+  .form-groop {
+    margin-left: 10px; 
+  }
+
+  .order-header {
+    font-size: 12px;
+  }
+
+  .order-details {
+    font-size: 12px; 
+
+  }
+  .order-header2{
+    margin-top: -70px;
+ 
+  }
+
+}
+@media (max-width: 768px) {
+  .logout-button {
+    width: 150px;
+    margin-top: 20px; 
+  }
+}
+
+@media (max-width: 480px) {
+  .logout-button {
+    width: 60%;
+    margin-top: -20px;
+    margin-bottom: -65px; 
+  }
+}
   </style>  
 </head>
 
@@ -244,8 +462,8 @@
               </svg>
           </div>
     </div>
-    <div>
-      <h2 style="margin-right: 380px;; margin-bottom: 45px; margin-top:-60px;">Orders</h2>
+    <div class="order-hea">
+      <h2 style="margin-right: 380px;; margin-bottom: 45px; margin-top:-60px;" >Orders</h2>
     </div>
   </div>
 
@@ -254,7 +472,7 @@
     <div class="order-header">
       <div style="margin-left:550px; margin-top:-150px;"><b>Aliza Zahid</b></div>
       <div style="margin-left: -80px; font-size: 12px;margin-top:-130px;"><br>Just Now - Pending</div>
-      <div style="margin-left:200px;margin-top:-120px;font-size: 12px; "> 08483791201</div>
+      <div style="margin-left:200px;margin-top:-120px;font-size: 12px; " class="number"> 08483791201</div>
     </div>
     <div class="order-details">
       <div class="order-items">
@@ -277,10 +495,10 @@
   </form>  </div>
   
   <div class="order">
-    <div class="order-header">
+    <div class="order-header order-header2">
       <div style="margin-left:550px; margin-top: -100px;"><b>Aliza Zahid</b></div>
       <div style="margin-left: -80px; font-size: 12px;margin-top:-80px"><br>Just Now - Pending</div>
-      <div style="margin-left:200px;margin-top:-55px;font-size: 12px; "> 08483791201</div>
+      <div style="margin-left:200px;margin-top:-55px;font-size: 12px; "class="num"> 08483791201</div>
     </div>
     <div class="order-details">
       <div class="order-items">
@@ -303,6 +521,6 @@
 <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-auth.js"></script>
 
-<script src="./protected.js"></script>
+<!-- <script src="./protected.js"></script> -->
   
   </body></html>
